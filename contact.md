@@ -9,4 +9,4 @@ Se vuoi scrivermi per confronto, idee, progetti o opportunità, puoi contattarmi
 - **Email:** da inserire
 - **LinkedIn:** da inserire
 
-Questa pagina verrà aggiornata con i contatti definitivi.
+Questo sito vuole essere anche un punto d'ingresso per nuove conversazioni, proposte e collaborazioni.
