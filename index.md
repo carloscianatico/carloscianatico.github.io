@@ -9,25 +9,25 @@ permalink: /
 Studente di Economia e Management in Bocconi.
 
 Lavoro su progetti, idee e sperimentazioni tra intelligenza artificiale, startup e pensiero economico.  
-Questo sito raccoglie ciò che sto costruendo, ciò che sto scrivendo e il modo in cui ragiono.
+Questo sito raccoglie il mio lavoro, i progetti che sto sviluppando e alcune riflessioni che considero abbastanza solide da essere pubblicate.
 
-## Cosa voglio mostrare
+## Cosa trovi qui
 
-- un profilo serio e professionale
-- progetti concreti, non solo intenzioni
-- un uso strutturato dell'intelligenza artificiale
-- idee che vale la pena sviluppare
+- progetti in corso
+- articoli e riflessioni
+- idee su economia, AI e startup
+- un punto di contatto diretto
 
-## Aree principali
+## Focus principali
 
-### Progetti
-Raccolgo qui i progetti su cui sto lavorando, con particolare attenzione a startup e strumenti costruiti con l'AI.
+### Intelligenza artificiale
+Mi interessa usare l'AI in modo concreto: per organizzare lavoro, costruire strumenti, testare idee e aumentare la qualità dell'esecuzione.
 
-### Idee
-Uso questo spazio per mettere ordine in intuizioni, problemi e riflessioni su economia, tecnologia e strategia.
+### Startup
+Sto lavorando a progetti imprenditoriali con attenzione a sviluppo progressivo, validazione e utilità reale.
 
-### Articoli
-Pubblico testi quando penso che un'idea sia abbastanza chiara da meritare una forma pubblica.
+### Scrittura
+Uso la scrittura per chiarire idee, strutturare ragionamenti e rendere pubbliche solo le riflessioni che ritengo davvero solide.
 
 ## Stato attuale
 
@@ -37,8 +37,8 @@ Pubblico testi quando penso che un'idea sia abbastanza chiara da meritare una fo
 
 ## Perché questo sito
 
-Non per fare scena.  
-Per rendere visibili in modo ordinato direzione, metodo e lavori.
+Non per sembrare qualcosa.  
+Per mostrare in modo ordinato direzione, metodo e lavori.
 
 [Scopri chi sono](/about/)  
 [Vedi i progetti](/projects/)  
