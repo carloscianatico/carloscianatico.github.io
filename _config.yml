@@ -1,3 +1,13 @@
 title: Carlo Scianatico
-description: Idee, progetti e articoli
-theme: jekyll-theme-minimal
+description: Idee, progetti e articoli su economia, AI e startup
+theme: minima
+url: "https://www.carloscianatico.com"
+
+header_pages:
+  - about.md
+  - projects.md
+  - ideas.md
+  - articles.md
+  - contact.md
+
+show_excerpts: true
