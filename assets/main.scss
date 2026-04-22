@@ -54,3 +54,18 @@ blockquote {
 hr {
   border-color: #dbe6f2;
 }
+.articles-contact-cta {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.98rem;
+}
+
+.articles-contact-cta a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.articles-contact-cta a:hover {
+  text-decoration: underline;
+}
