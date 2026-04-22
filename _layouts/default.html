@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'it' }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="page-glow page-glow-a"></div>
+    <div class="page-glow page-glow-b"></div>
+    {% include header.html %}
+
+    <main class="site-shell main-shell {% if page.layout == 'home' %}main-shell-home{% endif %}">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>

@@ -1,42 +1,39 @@
 ---
-layout: page_section
-lang: en
-ref: ideas
-title: Ideas
-permalink: /en/ideas/
-eyebrow: Themes
-headline: The ideas that return most often
-lead: Some themes come back in almost everything I write, study, or try to build.
+layout: "page_section"
+lang: "it"
+ref: "ideas"
+title: "Idee"
+permalink: "/ideas/"
+eyebrow: "Temi"
+headline: "Le idee che tornano più spesso"
+lead: "Alcuni temi ritornano in quasi tutto quello che scrivo, studio o provo a costruire."
 hero_links:
-- label: Go to the articles
-  url: /en/articles/
-- label: About me
-  url: /en/about/
+  - label: Vai agli articoli
+    url: "/articles/"
+  - label: Chi sono
+    url: "/about/"
 cards:
-- title: Economics and incentives
-  text: How people move when rules change, and why structures matter more than slogans.
-- title: Applied AI
-  text: Artificial intelligence as an operational tool, not as a fashion or an aesthetic
-    identity.
-- title: Startup and projects
-  text: Gradual building, small tests, validation, and real priorities.
-source_path: ideas.md
-auto_generated: true
+  - title: Economia e incentivi
+    text: "Come si muovono le persone quando le regole cambiano, e perché le strutture contano più degli slogan."
+  - title: AI applicata
+    text: "L'intelligenza artificiale come strumento operativo, non come semplice moda o identità estetica."
+  - title: Startup e progetti
+    text: "Costruzione graduale, test in piccolo, validazione e priorità reali."
 ---
-I do not think of ideas as opinions to display.
+Non considero le idee come opinioni da esibire.
 
-They interest me when they become at least one of these three things:
+Mi interessano quando diventano almeno una di queste tre cose:
 
-- a hypothesis to test
-- a problem to understand better
-- a working direction to develop
+- un'ipotesi da testare
+- un problema da capire meglio
+- una direzione di lavoro da sviluppare
 
-## How I use this section
+## Come uso questa sezione
 
-Here I collect the recurring themes that shape the site. It is not a closed list of labels, but a useful map for understanding where the articles and projects I publish come from.
+Qui raccolgo i temi ricorrenti che danno forma al sito. Non è una lista chiusa di etichette, ma una mappa utile per capire da dove arrivano gli articoli e i progetti che pubblico.
 
-## What you will not find
+## Cosa non troverai
 
-I am not interested in publishing vague reflections just to fill space.
+Non mi interessa pubblicare riflessioni vaghe solo per occupare spazio.
 
-If an idea appears here, it is because it has already started to connect to readings, observations, experiments, or concrete work.
+Se un'idea compare qui, è perché ha già iniziato a collegarsi a letture, osservazioni, esperimenti o lavori concreti.

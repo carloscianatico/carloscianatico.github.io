@@ -1,50 +1,44 @@
 ---
-layout: page_section
-lang: en
-ref: about
-title: About
-permalink: /en/about/
-eyebrow: Profile
-headline: Economics, incentives, projects
-lead: I study Economics and Management at Bocconi and focus my work on economic thinking,
-  applied AI, and building projects.
+layout: "page_section"
+lang: "it"
+ref: "about"
+title: "Chi sono"
+permalink: "/about/"
+eyebrow: "Profilo"
+headline: "Economia, incentivi, progetti"
+lead: "Studio Economia e Management in Bocconi e concentro il mio lavoro su pensiero economico, AI applicata e costruzione di progetti."
 hero_links:
-- label: View projects
-  url: /en/projects/
-- label: Contact me
-  url: /en/contact/
+  - label: Vedi i progetti
+    url: "/projects/"
+  - label: Contattami
+    url: "/contact/"
 cards:
-- kicker: Education
-  title: Bocconi
-  text: I am building my foundation in economics and management, with attention to
-    incentives, strategy, and decision-making.
-- kicker: Method
-  title: AI used properly
-  text: Not as a slogan, but as a tool to organize work, test ideas, and increase
-    the quality of execution.
-- kicker: Direction
-  title: Projects and writing
-  text: I am interested in building real things and explaining only ideas solid enough
-    to deserve public space.
-source_path: about.md
-auto_generated: true
+  - kicker: Formazione
+    title: "Bocconi"
+    text: "Sto costruendo la mia base in economia e management, con attenzione agli incentivi, alla strategia e alle decisioni."
+  - kicker: Metodo
+    title: "AI usata bene"
+    text: "Non come slogan, ma come strumento per organizzare lavoro, testare idee e aumentare la qualità dell'esecuzione."
+  - kicker: Direzione
+    title: "Progetti e scrittura"
+    text: "Mi interessa costruire cose vere e spiegare solo idee abbastanza solide da meritare spazio pubblico."
 ---
-I am Carlo Scianatico.
+Sono Carlo Scianatico.
 
-This site does not exist to make what I do look bigger than it is. It exists for the opposite reason: **to make what I am actually building readable in an orderly way**.
+Questo sito non nasce per sembrare più grande di quello che faccio. Nasce per il motivo opposto: **rendere leggibile, in modo ordinato, quello che sto davvero costruendo**.
 
-The areas that interest me most are three.
+Le aree che mi interessano di più sono tre.
 
-## Economic thinking
+## Pensiero economico
 
-I want to understand how incentives work, how decision-making power is distributed, and why some systems produce value while others waste resources and energy.
+Mi interessa capire come funzionano gli incentivi, come si distribuisce il potere decisionale e perché alcuni sistemi producono valore mentre altri sprecano risorse ed energia.
 
-## Applied artificial intelligence
+## Intelligenza artificiale applicata
 
-I use AI as an operational lever. I care about it when it helps structure processes, clarify problems, accelerate analysis, and turn intuitions into prototypes.
+Uso l'AI come leva operativa. Mi interessa quando aiuta a strutturare processi, chiarire problemi, accelerare analisi e trasformare intuizioni in prototipi.
 
-## Building projects
+## Costruzione di progetti
 
-I am working on entrepreneurial projects and on a professional identity that combines reasoning, execution, and the ability to write clearly.
+Sto lavorando su progetti imprenditoriali e su un'identità professionale che unisca ragionamento, esecuzione e capacità di scrivere in modo chiaro.
 
-In short: I care about **building substance** and making it visible without fluff, poses, or self-celebration.
+In sintesi: mi interessa **costruire sostanza** e renderla visibile senza fuffa, senza pose e senza autocelebrazione.

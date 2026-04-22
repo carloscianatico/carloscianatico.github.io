@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="post-shell reveal">
+  <header class="post-hero glass-card">
+    <span class="eyebrow">{% if page.lang == 'en' %}Article{% else %}Articolo{% endif %}</span>
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta-row">
+      <span>{{ page.date | date: "%d %b %Y" }}</span>
+      {% assign words = content | number_of_words %}
+      {% assign mins = words | divided_by: 180 | plus: 1 %}
+      <span>{{ mins }} {% if page.lang == 'en' %}min read{% else %}min di lettura{% endif %}</span>
+      {% include lang_switch.html %}
+    </div>
+    {% if page.excerpt %}<p class="post-excerpt">{{ page.excerpt }}</p>{% endif %}
+  </header>
+
+  <div class="prose-card glass-card post-prose">
+    {{ content }}
+  </div>
+</article>

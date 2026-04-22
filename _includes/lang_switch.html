@@ -1,0 +1,38 @@
+{% assign current_lang = page.lang | default: 'it' %}
+{% assign switch_url = nil %}
+{% assign switch_label = nil %}
+
+{% if page.collection == 'posts' %}
+  {% assign counterpart = site.en_posts | where: 'source_slug', page.slug | first %}
+  {% if counterpart %}
+    {% assign switch_url = counterpart.url %}
+  {% endif %}
+{% elsif page.collection == 'en_posts' %}
+  {% assign counterpart = site.posts | where: 'slug', page.source_slug | first %}
+  {% if counterpart %}
+    {% assign switch_url = counterpart.url %}
+  {% endif %}
+{% else %}
+  {% if current_lang == 'it' %}
+    {% assign target_lang = 'en' %}
+  {% else %}
+    {% assign target_lang = 'it' %}
+  {% endif %}
+  {% assign pages_with_ref = site.pages | where: 'ref', page.ref %}
+  {% assign counterpart = pages_with_ref | where: 'lang', target_lang | first %}
+  {% if counterpart %}
+    {% assign switch_url = counterpart.url %}
+  {% endif %}
+{% endif %}
+
+{% if current_lang == 'it' %}
+  {% assign switch_label = 'EN' %}
+{% else %}
+  {% assign switch_label = 'IT' %}
+{% endif %}
+
+{% if switch_url %}
+  <a class="lang-switch" href="{{ switch_url | relative_url }}">{{ switch_label }}</a>
+{% else %}
+  <span class="lang-switch lang-switch-disabled">{{ switch_label }}</span>
+{% endif %}

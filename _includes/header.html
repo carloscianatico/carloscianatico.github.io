@@ -1,0 +1,23 @@
+{% assign nav = site.data.navigation[page.lang | default: 'it'] %}
+<header class="site-header-shell" data-header>
+  <div class="site-shell site-header-inner">
+    <a class="brand" href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
+      <span class="brand-mark">CS</span>
+      <span class="brand-text">
+        <strong>Carlo Scianatico</strong>
+        <small>{% if page.lang == 'en' %}Economics, AI, startup{% else %}Economia, AI, startup{% endif %}</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Menu" data-menu-toggle>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" data-menu>
+      {% for item in nav %}
+        <a class="nav-link {% if page.url == item.url %}is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+      {% endfor %}
+      {% include lang_switch.html %}
+    </nav>
+  </div>
+</header>

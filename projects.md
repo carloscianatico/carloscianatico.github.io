@@ -1,51 +1,46 @@
 ---
-layout: page_section
-lang: en
-ref: projects
-title: Projects
-permalink: /en/projects/
-eyebrow: Ongoing work
-headline: What I am building right now
-lead: A concise overview of the main projects I am working on and their current state.
+layout: "page_section"
+lang: "it"
+ref: "projects"
+title: "Progetti"
+permalink: "/projects/"
+eyebrow: "Lavori in corso"
+headline: "Cosa sto costruendo adesso"
+lead: "Una panoramica sintetica dei progetti principali su cui sto lavorando e del loro stato attuale."
 hero_links:
-- label: Read the articles
-  url: /en/articles/
-- label: Write to me
-  url: /en/contact/
+  - label: Leggi gli articoli
+    url: "/articles/"
+  - label: Scrivimi
+    url: "/contact/"
 cards:
-- kicker: Startup
-  title: Entrepreneurial project
-  text: Definition, validation, and gradual development phase. The goal is to reach
-    a clear and useful proposition.
-  meta: 'Status: being built'
-- kicker: AI
-  title: Systems and tools
-  text: I am experimenting with the use of artificial intelligence to organize work,
-    build tools, and produce better outputs.
-  meta: 'Status: in experimentation'
-- kicker: Personal site
-  title: Public hub for my work
-  text: 'This site is itself a project: it collects articles, ideas, projects, and
-    contacts in a readable way.'
-  meta: 'Status: online and improving'
-source_path: projects.md
-auto_generated: true
+  - kicker: Startup
+    title: "Progetto imprenditoriale"
+    text: "Fase di definizione, validazione e sviluppo progressivo. L'obiettivo è arrivare a una proposta chiara e utile."
+    meta: "Stato: in costruzione"
+  - kicker: AI
+    title: "Sistemi e strumenti"
+    text: "Sto sperimentando l'uso dell'intelligenza artificiale per organizzare lavoro, costruire strumenti e produrre output migliori."
+    meta: "Stato: in sperimentazione"
+  - kicker: Sito personale
+    title: "Hub pubblico del mio lavoro"
+    text: "Questo sito è un progetto a sua volta: serve a raccogliere articoli, idee, progetti e contatti in modo leggibile."
+    meta: "Stato: online e in miglioramento"
 ---
-This section is not here to inflate the number of things I do.
+Questa sezione non serve a gonfiare il numero di cose che faccio.
 
-It exists to show **which fronts I am investing real time, attention, and learning into**.
+Serve a mostrare **su quali fronti sto investendo tempo, attenzione e apprendimento reale**.
 
-## Why this page matters
+## Perché questa pagina conta
 
-Many personal sites look like showcases. I want this page to work more like a small **progress log**: fewer declarations, more direction.
+Molti siti personali sembrano vetrine. A me interessa che questa pagina funzioni più come un piccolo **registro di avanzamento**: meno dichiarazioni, più direzione.
 
-## What to expect
+## Cosa aspettarti
 
-Over time, better details will appear here about:
+Con il tempo qui compariranno dettagli migliori su:
 
-- goals of each project
-- current stage
-- first concrete results
-- tools and processes used
+- obiettivi dei singoli progetti
+- stato di avanzamento
+- primi risultati concreti
+- strumenti e processi usati
 
-When a project is clear enough to be explained well, you will find it here or in related articles.
+Quando un progetto sarà abbastanza chiaro da essere raccontato bene, lo troverai qui o negli articoli collegati.

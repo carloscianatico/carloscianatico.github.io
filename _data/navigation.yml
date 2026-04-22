@@ -1,0 +1,26 @@
+it:
+  - label: Home
+    url: /
+  - label: Chi sono
+    url: /about/
+  - label: Progetti
+    url: /projects/
+  - label: Idee
+    url: /ideas/
+  - label: Articoli
+    url: /articles/
+  - label: Contatti
+    url: /contact/
+en:
+  - label: Home
+    url: /en/
+  - label: About
+    url: /en/about/
+  - label: Projects
+    url: /en/projects/
+  - label: Ideas
+    url: /en/ideas/
+  - label: Articles
+    url: /en/articles/
+  - label: Contact
+    url: /en/contact/
