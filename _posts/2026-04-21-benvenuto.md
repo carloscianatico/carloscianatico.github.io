@@ -3,8 +3,10 @@ layout: post
 title: "Benvenuto"
 ---
 
-Questo è il primo articolo del sito.
+I primi articoli del mio precedente blog.
 
 Nei prossimi testi pubblicherò riflessioni, progetti e note di lavoro su economia, AI e startup.
 
-Nel frattempo questi sono i primi post sul mio primo blog:
+Nel frattempo...
+
+
