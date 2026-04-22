@@ -7,6 +7,7 @@ tags: [Valori, Idee]
 excerpt: "La vita è un viaggio in mare e nessuno ti dice come si naviga o ti da gli strumenti."
 ---
 Io penso che vivere sia un viaggio, che per sopravvivere sia imprescindibile il movimento…
+
 Nessuno nella storia è mai sopravvissuto stando seduto all'ombra di un albero, sperando che il cibo gli cadesse in grembo.
 Negli ultimi anni ho elaborato questa metafora per visualizzare come percepisco la vita:
 Tutti noi secondo me viviamo la vita non come una scalata, ma come un viaggio in mare. Oggi decido di stare su un'isola, domani voglio andare in grandi città. Non c'è una sola destinazione e non esiste una destinazione giusta; ognuno può stare dove vuole, ma per vivere si deve muovere e decidere consapevolmente quali movimenti fare.
