@@ -1,0 +1,37 @@
+title: Carlo Scianatico
+description: Idee, progetti e articoli su economia, AI e startup
+url: "https://www.carloscianatico.com"
+baseurl: ""
+lang: it
+markdown: kramdown
+permalink: pretty
+
+timezone: Europe/Rome
+
+collections:
+  en_posts:
+    output: true
+    permalink: /en/articles/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      lang: it
+  - scope:
+      path: ""
+      type: en_posts
+    values:
+      layout: post
+      lang: en
+
+exclude:
+  - README.md
+  - Gemfile.lock
+  - scripts
+  - requirements.txt
+  - vendor
+  - .github
+  - .manual_build
