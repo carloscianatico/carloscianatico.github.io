@@ -1,10 +1,13 @@
 ---
-layout: "articles"
-lang: "it"
-ref: "articles"
-title: "Articoli"
-permalink: "/articles/"
-eyebrow: "Scrittura"
-headline: "Articoli completi e riflessioni sviluppate"
-lead: "Qui raccolgo i testi che considero abbastanza solidi da essere pubblicati come articoli, non solo come appunti."
+layout: articles
+lang: en
+ref: articles
+title: Articles
+permalink: /en/articles/
+eyebrow: Writing
+headline: Complete articles and developed reflections
+lead: Here I collect the texts I consider solid enough to be published as articles,
+  not just as notes.
+source_path: articles.md
+auto_generated: true
 ---

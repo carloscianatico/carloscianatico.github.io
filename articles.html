@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<section class="page-hero reveal">
+  {% if page.eyebrow %}<span class="eyebrow">{{ page.eyebrow }}</span>{% endif %}
+  <h1>{{ page.headline | default: page.title }}</h1>
+  {% if page.lead %}<p class="page-lead">{{ page.lead }}</p>{% endif %}
+</section>
+
+{% if page.lang == 'en' %}
+  {% assign posts_list = site.en_posts | sort: 'date' | reverse %}
+{% else %}
+  {% assign posts_list = site.posts | sort: 'date' | reverse %}
+{% endif %}
+
+<section class="section-block reveal">
+  <div class="articles-list">
+    {% for post in posts_list %}
+      <article class="glass-card article-card">
+        <div>
+          <span class="post-meta">{{ post.date | date: "%d %b %Y" }}</span>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.excerpt %}<p>{{ post.excerpt | strip_html }}</p>{% endif %}
+        </div>
+        <a class="button button-secondary" href="{{ post.url | relative_url }}">{% if page.lang == 'en' %}Open{% else %}Apri{% endif %}</a>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="articles-cta glass-card">
+    <p>{% if page.lang == 'en' %}If you want to comment on an article or discuss an idea, I'd be glad to hear from you.{% else %}Se vuoi commentare un articolo o discutere un'idea, mi fa piacere sentirti.{% endif %}</p>
+    <a class="button button-primary" href="{% if page.lang == 'en' %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contact/' | relative_url }}{% endif %}">{% if page.lang == 'en' %}Contact me{% else %}Contattami{% endif %}</a>
+  </div>
+</section>

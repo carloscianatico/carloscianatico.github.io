@@ -1,30 +1,33 @@
 ---
-layout: "page_section"
-lang: "it"
-ref: "contact"
-title: "Contatti"
-permalink: "/contact/"
-eyebrow: "Contatti"
-headline: "Punto di accesso diretto"
-lead: "Se vuoi scrivermi per confronti, opportunità, progetti o commenti sugli articoli, qui trovi i canali giusti."
+layout: page_section
+lang: en
+ref: contact
+title: Contact
+permalink: /en/contact/
+eyebrow: Contact
+headline: Direct entry point
+lead: If you want to write to me about ideas, opportunities, projects, or comments
+  on the articles, here are the right channels.
 hero_links:
-  - label: LinkedIn
-    url: "https://www.linkedin.com/in/carlo-scianatico-936327253/"
-  - label: Torna agli articoli
-    url: "/articles/"
+- label: LinkedIn
+  url: https://www.linkedin.com/in/carlo-scianatico-936327253/
+- label: Back to articles
+  url: /en/articles/
 cards:
-  - title: Email
-    text: "carlo.scianatico.work@gmail.com"
-  - title: LinkedIn
-    text: "Profilo professionale e contatto diretto."
+- title: Email
+  text: carlo.scianatico.work@gmail.com
+- title: LinkedIn
+  text: Professional profile and direct contact.
+source_path: contact.md
+auto_generated: true
 ---
-Il modo più semplice per contattarmi è via email o LinkedIn.
+The simplest way to contact me is by email or LinkedIn.
 
-## Quando ha senso scrivermi
+## When it makes sense to write to me
 
-- per commentare un articolo
-- per discutere un'idea o un progetto
-- per opportunità di collaborazione
-- per confronti seri su economia, AI e costruzione di progetti
+- to comment on an article
+- to discuss an idea or a project
+- for collaboration opportunities
+- for serious exchanges on economics, AI, and project building
 
-Preferisco messaggi chiari, sintetici e con un punto preciso da discutere. È il modo più facile per avere uno scambio utile da entrambe le parti.
+I prefer messages that are clear, concise, and focused on a precise point. It is the easiest way to have a useful exchange for both sides.

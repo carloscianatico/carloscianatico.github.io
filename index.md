@@ -1,46 +1,52 @@
 ---
-layout: "home"
-lang: "it"
-ref: "home"
-title: "Home"
-permalink: "/"
-hero_kicker: "Economia, AI, startup"
-hero_title: "Carlo Scianatico"
-hero_subtitle: "Studente di Economia e Management in Bocconi."
-hero_intro: "Costruisco progetti, scrivo articoli e uso l'intelligenza artificiale in modo concreto per aumentare qualità, velocità ed esecuzione."
-hero_primary_label: "Scopri chi sono"
-hero_primary_url: "/about/"
-hero_secondary_label: "Leggi gli articoli"
-hero_secondary_url: "/articles/"
+layout: home
+lang: en
+ref: home
+title: Home
+permalink: /en/
+hero_kicker: Economics, AI, startup
+hero_title: Carlo Scianatico
+hero_subtitle: Economics and Management student at Bocconi.
+hero_intro: I build projects, write articles, and use artificial intelligence in a
+  concrete way to increase quality, speed, and execution.
+hero_primary_label: About me
+hero_primary_url: /en/about/
+hero_secondary_label: Read the articles
+hero_secondary_url: /en/articles/
 status_cards:
-  - label: Startup
-    value: "In sviluppo"
-  - label: Progetti AI
-    value: "In sperimentazione"
-  - label: Scrittura
-    value: "In pubblicazione"
+- label: Startup
+  value: In development
+- label: AI projects
+  value: In experimentation
+- label: Writing
+  value: Being published
 focus_cards:
-  - title: Intelligenza artificiale
-    text: "Mi interessa l'AI quando diventa leva di lavoro reale: strumenti, organizzazione, prototipi, processi migliori."
-  - title: Startup
-    text: "Lavoro su progetti imprenditoriali con attenzione a validazione, struttura e utilità concreta."
-  - title: Scrittura
-    text: "Uso la scrittura per chiarire idee, mettere ordine nei ragionamenti e pubblicare solo ciò che regge davvero."
+- title: Artificial intelligence
+  text: 'I am interested in AI when it becomes a lever for real work: tools, organization,
+    prototypes, and better processes.'
+- title: Startup
+  text: I work on entrepreneurial projects with attention to validation, structure,
+    and practical usefulness.
+- title: Writing
+  text: I use writing to clarify ideas, organize reasoning, and publish only what
+    actually holds up.
 quick_links:
-  - label: Chi sono
-    title: "Profilo e impostazione"
-    text: "Contesto, interessi e modo di ragionare."
-    url: "/about/"
-  - label: Progetti
-    title: "Cosa sto costruendo"
-    text: "Startup, AI e sviluppo dei lavori in corso."
-    url: "/projects/"
-  - label: Idee
-    title: "Temi ricorrenti"
-    text: "Economia, incentivi, AI applicata e pensiero critico."
-    url: "/ideas/"
-  - label: Contatti
-    title: "Punto di accesso diretto"
-    text: "Per confronti, opportunità e conversazioni serie."
-    url: "/contact/"
+- label: About
+  title: Profile and approach
+  text: Context, interests, and how I reason.
+  url: /en/about/
+- label: Projects
+  title: What I am building
+  text: Startup, AI, and development of ongoing work.
+  url: /en/projects/
+- label: Ideas
+  title: Recurring themes
+  text: Economics, incentives, applied AI, and critical thinking.
+  url: /en/ideas/
+- label: Contact
+  title: Direct entry point
+  text: For conversations, opportunities, and serious exchanges.
+  url: /en/contact/
+source_path: index.md
+auto_generated: true
 ---

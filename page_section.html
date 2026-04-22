@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<section class="page-hero reveal">
+  {% if page.eyebrow %}<span class="eyebrow">{{ page.eyebrow }}</span>{% endif %}
+  <h1>{{ page.headline | default: page.title }}</h1>
+  {% if page.lead %}<p class="page-lead">{{ page.lead }}</p>{% endif %}
+  {% if page.hero_links %}
+    <div class="hero-actions">
+      {% for item in page.hero_links %}
+        {% if item.url contains "://" or item.url contains "mailto:" %}<a class="button {% if forloop.first %}button-primary{% else %}button-secondary{% endif %}" href="{{ item.url }}"{% if item.url contains "://" %} target="_blank" rel="noreferrer"{% endif %}>{{ item.label }}</a>{% else %}<a class="button {% if forloop.first %}button-primary{% else %}button-secondary{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>{% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+{% if page.cards %}
+<section class="section-block reveal">
+  <div class="card-grid {% if page.cards.size > 2 %}card-grid-3{% else %}card-grid-2{% endif %}">
+    {% for card in page.cards %}
+      <article class="glass-card info-card">
+        {% if card.kicker %}<span class="card-kicker">{{ card.kicker }}</span>{% endif %}
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.text }}</p>
+        {% if card.meta %}<div class="meta-chip">{{ card.meta }}</div>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="content-shell reveal">
+  <article class="prose-card glass-card">
+    {{ content }}
+  </article>
+</section>

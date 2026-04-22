@@ -1,0 +1,93 @@
+---
+layout: default
+---
+<section class="hero reveal">
+  <div class="hero-copy">
+    {% if page.hero_kicker %}<span class="eyebrow">{{ page.hero_kicker }}</span>{% endif %}
+    <h1>{{ page.hero_title | default: site.title }}</h1>
+    {% if page.hero_subtitle %}<p class="hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
+    {% if page.hero_intro %}<p class="hero-intro">{{ page.hero_intro }}</p>{% endif %}
+    <div class="hero-actions">
+      {% if page.hero_primary_label and page.hero_primary_url %}
+        <a class="button button-primary" href="{{ page.hero_primary_url | relative_url }}">{{ page.hero_primary_label }}</a>
+      {% endif %}
+      {% if page.hero_secondary_label and page.hero_secondary_url %}
+        <a class="button button-secondary" href="{{ page.hero_secondary_url | relative_url }}">{{ page.hero_secondary_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <aside class="hero-panel reveal">
+    <div class="glass-card hero-panel-card">
+      <span class="panel-label">{% if page.lang == 'en' %}Current direction{% else %}Direzione attuale{% endif %}</span>
+      <ul class="status-list">
+        {% for item in page.status_cards %}
+          <li>
+            <span>{{ item.label }}</span>
+            <strong>{{ item.value }}</strong>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </aside>
+</section>
+
+{% if page.focus_cards %}
+<section class="section-block reveal">
+  <div class="section-heading">
+    <span class="eyebrow">{% if page.lang == 'en' %}Main axes{% else %}Assi principali{% endif %}</span>
+    <h2>{% if page.lang == 'en' %}What this site revolves around{% else %}Su cosa ruota il sito{% endif %}</h2>
+  </div>
+  <div class="card-grid card-grid-3">
+    {% for card in page.focus_cards %}
+      <article class="glass-card info-card">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.text }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if page.quick_links %}
+<section class="section-block reveal">
+  <div class="section-heading">
+    <span class="eyebrow">{% if page.lang == 'en' %}Quick access{% else %}Accesso rapido{% endif %}</span>
+    <h2>{% if page.lang == 'en' %}Useful entry points{% else %}Punti di ingresso utili{% endif %}</h2>
+  </div>
+  <div class="card-grid card-grid-2">
+    {% for link in page.quick_links %}
+      <a class="glass-card link-card" href="{{ link.url | relative_url }}">
+        <span class="link-card-label">{{ link.label }}</span>
+        <strong>{{ link.title }}</strong>
+        <p>{{ link.text }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% assign latest_post = nil %}
+{% if page.lang == 'en' %}
+  {% assign latest_posts = site.en_posts | sort: 'date' | reverse %}
+{% else %}
+  {% assign latest_posts = site.posts | sort: 'date' | reverse %}
+{% endif %}
+{% assign latest_post = latest_posts | first %}
+
+{% if latest_post %}
+<section class="section-block reveal">
+  <div class="section-heading">
+    <span class="eyebrow">{% if page.lang == 'en' %}Latest article{% else %}Ultimo articolo{% endif %}</span>
+    <h2>{% if page.lang == 'en' %}Most recent publication{% else %}Pubblicazione più recente{% endif %}</h2>
+  </div>
+  <article class="glass-card feature-article">
+    <div>
+      <span class="post-meta">{{ latest_post.date | date: "%d %b %Y" }}</span>
+      <h3><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h3>
+      {% if latest_post.excerpt %}<p>{{ latest_post.excerpt | strip_html }}</p>{% endif %}
+    </div>
+    <a class="button button-secondary" href="{{ latest_post.url | relative_url }}">{% if page.lang == 'en' %}Read article{% else %}Leggi l'articolo{% endif %}</a>
+  </article>
+</section>
+{% endif %}
