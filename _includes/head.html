@@ -3,4 +3,6 @@
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | escape }}">
 <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
+<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
 <script defer src="{{ '/assets/app.js' | relative_url }}"></script>
