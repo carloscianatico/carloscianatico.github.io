@@ -9,6 +9,7 @@
       </span>
     </a>
 
+    <button class="theme-toggle" title="Toggle theme">🌙</button>button>
     <button class="menu-toggle" type="button" aria-label="Menu" data-menu-toggle>
       <span></span><span></span><span></span>
     </button>
@@ -21,3 +22,14 @@
     </nav>
   </div>
 </header>
+<div class="sidebar-overlay"></div>div>
+<nav class="sidebar-menu">
+    <div class="sidebar-search">
+      <input type="text" class="search-input" placeholder="Search...">
+    </div>div>
+    <div class="sidebar-nav">
+          {% for item in site.data.navigation %}
+          <a href="{{ item.url }}" class="sidebar-nav-item">{{ item.title }}</a>a>
+          {% endfor %}
+    </div>div>
+</nav>nav>
