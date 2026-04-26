@@ -1,0 +1,88 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+          xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+          xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Homepage IT -->
+    <url>
+          <loc>{{ site.url }}/index.html</loc>
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+
+    <!-- Homepage EN -->
+    <url>
+          <loc>{{ site.url }}/en/index.html</loc>
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+
+    <!-- Articoli IT -->
+    {% for post in site.posts %}
+    <url>
+          <loc>{{ post.url | prepend: site.url }}</loc>
+          <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    {% endfor %}
+
+    <!-- Articoli EN -->
+    {% for post in site.en_posts %}
+    <url>
+          <loc>{{ post.url | prepend: site.url }}</loc>
+          <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    {% endfor %}
+
+    <!-- Pagine Statiche -->
+    <url>
+          <loc>{{ site.url }}/about.html</loc>
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+
+    <url>
+          <loc>{{ site.url }}/articles.html</loc>
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+    </url>
+
+    <url>
+          <loc>{{ site.url }}/contact.html</loc>
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.6</priority>
+    </url>
+
+    <url>
+          <loc>{{ site.url }}/en/about.html</loc>
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+
+    <url>
+          <loc>{{ site.url }}/en/articles.html</loc>
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+    </url>
+
+    <url>
+          <loc>{{ site.url }}/en/contact.html</loc>
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.6</priority>
+    </url>
+
+</urlset>
