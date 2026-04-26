@@ -1,0 +1,40 @@
+# robots.txt - Posiziona nella root del repository
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /vendor/
+Disallow: /scripts/
+
+# Crawl delay per evitare sovraccarico
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://carloscianatico.github.io/sitemap.xml
+Sitemap: https://carloscianatico.github.io/feed.xml
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# Bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Allow: /
