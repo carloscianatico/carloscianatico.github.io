@@ -2,53 +2,23 @@
 layout: default
 ---
 
-<!-- HERO -->
-<section class="hero reveal">
-  <div class="hero-copy">
-    {% if page.hero_kicker %}<span class="eyebrow">{{ page.hero_kicker }}</span>{% endif %}
-    <h1>{{ page.hero_title | default: site.title }}</h1>
-    {% if page.hero_subtitle %}<p class="hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
-    {% if page.hero_intro %}<p class="hero-intro">{{ page.hero_intro }}</p>{% endif %}
-    <div class="hero-actions">
-      {% if page.hero_primary_label and page.hero_primary_url %}
-        <a class="button button-primary" href="{{ page.hero_primary_url | relative_url }}">{{ page.hero_primary_label }}</a>
-      {% endif %}
-      {% if page.hero_secondary_label and page.hero_secondary_url %}
-        <a class="button button-secondary" href="{{ page.hero_secondary_url | relative_url }}">{{ page.hero_secondary_label }}</a>
-      {% endif %}
-    </div>
-  </div>
-
-  <aside class="hero-panel reveal">
-    <div class="glass-card hero-panel-card">
-      <span class="panel-label">{% if page.lang == 'en' %}Current direction{% else %}Direzione attuale{% endif %}</span>
-      <ul class="status-list">
-        {% for item in page.status_cards %}
-          <li>
-            <span>{{ item.label }}</span>
-            <strong>{{ item.value }}</strong>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </aside>
-</section>
-
-<!-- CARD TEMATICHE (senza intestazione) -->
-{% if page.focus_cards %}
-<section class="section-block reveal">
-  <div class="card-grid card-grid-3">
-    {% for card in page.focus_cards %}
-      <article class="glass-card info-card">
-        <h3>{{ card.title }}</h3>
-        <p>{{ card.text }}</p>
-      </article>
-    {% endfor %}
+<!-- HERO (solo testo + bottoni, senza pannello laterale) -->
+<section class="page-hero reveal">
+  {% if page.hero_kicker %}<span class="eyebrow">{{ page.hero_kicker }}</span>{% endif %}
+  <h1>{{ page.hero_title | default: site.title }}</h1>
+  {% if page.hero_subtitle %}<p class="hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
+  {% if page.hero_intro %}<p class="page-lead">{{ page.hero_intro }}</p>{% endif %}
+  <div class="hero-actions">
+    {% if page.hero_primary_label and page.hero_primary_url %}
+      <a class="button button-primary" href="{{ page.hero_primary_url | relative_url }}">{{ page.hero_primary_label }}</a>
+    {% endif %}
+    {% if page.hero_secondary_label and page.hero_secondary_url %}
+      <a class="button button-secondary" href="{{ page.hero_secondary_url | relative_url }}">{{ page.hero_secondary_label }}</a>
+    {% endif %}
   </div>
 </section>
-{% endif %}
 
-<!-- LINK RAPIDI (senza intestazione) -->
+<!-- LINK RAPIDI -->
 {% if page.quick_links %}
 <section class="section-block reveal">
   <div class="card-grid card-grid-2">
@@ -63,7 +33,7 @@ layout: default
 </section>
 {% endif %}
 
-<!-- ULTIMO ARTICOLO (senza intestazione) -->
+<!-- ULTIMO ARTICOLO con titolo linkato -->
 {% if page.lang == 'en' %}
   {% assign latest_posts = site.en_posts | sort: 'date' | reverse %}
 {% else %}
@@ -73,6 +43,13 @@ layout: default
 
 {% if latest_post %}
 <section class="section-block reveal">
+  <div class="section-heading">
+    <h2>
+      <a href="{{ '/articles/' | relative_url }}" class="projects-section-title">
+        {% if page.lang == 'en' %}Articles{% else %}Articoli{% endif %} <span class="projects-arrow">→</span>
+      </a>
+    </h2>
+  </div>
   <article class="glass-card feature-article">
     <div>
       <span class="post-meta">{{ latest_post.date | date: "%d %b %Y" }}</span>
@@ -80,7 +57,7 @@ layout: default
       {% if latest_post.excerpt %}<p>{{ latest_post.excerpt | strip_html }}</p>{% endif %}
     </div>
     <a class="button button-secondary" href="{{ latest_post.url | relative_url }}">
-      {% if page.lang == 'en' %}Read{% else %}Leggi l'articolo{% endif %}
+      {% if page.lang == 'en' %}Read{% else %}Leggi{% endif %}
     </a>
   </article>
 </section>
