@@ -4,7 +4,6 @@ lang: en
 ref: projects
 title: Projects
 permalink: /en/projects/
-eyebrow: Ongoing work
 headline: What I am building right now
 lead: A concise overview of the main projects I am working on and their current state.
 hero_links:
