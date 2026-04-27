@@ -1,124 +1,144 @@
-/* ===========================
-   Theme Variables - Dark (default)
-   =========================== */
-:root {
-  --bg-primary: #0a0e27;
-  --bg-secondary: #1a1f3a;
-  --bg-tertiary: #2a3051;
-  --text-primary: #e0e6ff;
-  --text-secondary: #a8b2d1;
-  --accent-primary: #4a9eff;
-  --accent-secondary: #6bb6ff;
-  --border-color: #3a4568;
-  --shadow-color: rgba(10, 14, 39, 0.5);
-}
-
-/* ===========================
-   Light Mode
-   =========================== */
+/* ============================================================
+   LIGHT MODE — override tutte le variabili del sito
+   ============================================================ */
 body.light-mode {
-  --bg-primary: #f4f6fb;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #e8ecf5;
-  --text-primary: #111827;
-  --text-secondary: #374151;
-  --accent-primary: #1d5fa8;
-  --accent-secondary: #2563aa;
-  --border-color: #c8d0e0;
-  --shadow-color: rgba(29, 95, 168, 0.12);
+  /* Ridefinisce le variabili native di main.scss */
+  --bg:            #f0f4f8;
+  --bg-soft:       #e4eaf3;
+  --panel:         rgba(255, 255, 255, 0.90);
+  --panel-strong:  rgba(255, 255, 255, 0.98);
+  --line:          rgba(0, 0, 0, 0.10);
+  --text:          #0f172a;
+  --muted:         #475569;
+  --accent:        #1d5fa8;
+  --accent-strong: #1558a0;
+  --accent-soft:   rgba(29, 95, 168, 0.12);
+  --success:       #16a34a;
+  --shadow:        0 24px 70px rgba(0, 0, 0, 0.10);
 }
 
-/* Force all text to use variables in light mode */
-body.light-mode,
-body.light-mode p,
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode h3,
-body.light-mode h4,
-body.light-mode li,
-body.light-mode span,
-body.light-mode small,
-body.light-mode strong {
-  color: var(--text-primary);
+/* Body: sfondo hardcoded in main.scss → override */
+body.light-mode {
+  background:
+    radial-gradient(circle at top left, rgba(29, 95, 168, 0.09), transparent 26%),
+    radial-gradient(circle at 80% 10%, rgba(22, 163, 74, 0.06), transparent 20%),
+    linear-gradient(180deg, #f0f4f8 0%, #e8eef6 50%, #f0f4f8 100%) !important;
+  color: var(--text) !important;
 }
 
-body.light-mode a {
-  color: var(--accent-primary);
+/* Header */
+body.light-mode .site-header-inner {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
 }
 
-body.light-mode .brand-text small,
-body.light-mode .text-secondary {
-  color: var(--text-secondary);
+/* Tutte le glass card / pannelli contenuto */
+body.light-mode .glass-card,
+body.light-mode .hero-copy,
+body.light-mode .page-hero,
+body.light-mode .prose-card,
+body.light-mode .post-hero,
+body.light-mode .hero-panel-card {
+  background: rgba(255, 255, 255, 0.90) !important;
+  border-color: rgba(0, 0, 0, 0.09) !important;
 }
 
-/* ===========================
-   Base
-   =========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Status list */
+body.light-mode .status-list li {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Footer */
+body.light-mode .footer-grid > div {
+  background: rgba(255, 255, 255, 0.80) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
-a {
-  color: var(--accent-primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
+/* Glow più sottili in light mode */
+body.light-mode .page-glow-a {
+  background: rgba(29, 95, 168, 0.12) !important;
+  opacity: 0.5;
+}
+body.light-mode .page-glow-b {
+  background: rgba(22, 163, 74, 0.08) !important;
+  opacity: 0.5;
 }
 
-a:hover { color: var(--accent-secondary); }
+/* Nav dropdown */
+body.light-mode .nav-dropdown {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-color: rgba(0, 0, 0, 0.10) !important;
+}
+body.light-mode .nav-dropdown-search input {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: var(--text) !important;
+}
 
-/* ===========================
-   Header Layout
-   =========================== */
-.site-header-inner {
-  display: flex;
+/* Projects section */
+body.light-mode .projects-section {
+  background: rgba(255, 255, 255, 0.90);
+  border-color: rgba(0, 0, 0, 0.09);
+}
+body.light-mode .project-card {
+  background: rgba(232, 238, 246, 0.95);
+  border-color: rgba(0, 0, 0, 0.09);
+}
+body.light-mode .project-tech span {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Breadcrumb */
+body.light-mode .breadcrumb {
+  background: rgba(255, 255, 255, 0.80);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   HEADER CONTROLS — layout destra header
+   ============================================================ */
+.header-controls {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  gap: 8px;
   flex-shrink: 0;
 }
 
-/* ===========================
-   Hamburger Menu (3 bars)
-   =========================== */
+/* ============================================================
+   HAMBURGER — 3 barre reali
+   ============================================================ */
 .hamburger-menu {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 22px;
-  height: 16px;
-  background: none;
-  border: none;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 14px;
   cursor: pointer;
-  padding: 0;
+  padding: 0 12px;
   flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hamburger-menu:hover {
+  background: var(--accent-soft);
+  border-color: rgba(112, 184, 255, 0.35);
 }
 
 .hamburger-menu span {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--text-primary);
-  border-radius: 2px;
+  background-color: var(--text);
+  border-radius: 999px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Animated X when open */
+/* Animazione X quando aperto */
 .hamburger-menu.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -131,202 +151,169 @@ a:hover { color: var(--accent-secondary); }
 }
 
 .hamburger-menu:focus {
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
-/* ===========================
-   Theme Toggle Button
-   =========================== */
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  padding: 0.4rem 0.5rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-  background-color: var(--bg-tertiary);
-  transform: scale(1.15);
-}
-
-.theme-toggle:focus {
-  outline: 2px solid var(--accent-primary);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* ===========================
-   Sidebar
-   =========================== */
-.sidebar {
+/* ============================================================
+   THEME TOGGLE — luna / sole
+   ============================================================ */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-soft);
+  border-color: rgba(112, 184, 255, 0.35);
+  transform: scale(1.1);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   NAV DROPDOWN — apre sotto l'header al click
+   ============================================================ */
+.nav-dropdown {
   position: fixed;
   left: 0;
-  top: 80px;
-  width: 280px;
-  height: calc(100vh - 80px);
-  background-color: var(--bg-secondary);
-  border-right: 1px solid var(--border-color);
-  overflow-y: auto;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  z-index: 999;
-  padding: 1.25rem 1rem;
+  right: 0;
+  top: 90px; /* fallback, aggiornato via JS */
+  z-index: 19;
+  background: rgba(7, 14, 25, 0.97);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.nav-dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown-inner {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 0;
 }
 
-.sidebar.open {
-  transform: translateX(0);
-}
-
-/* Sidebar Search */
-.sidebar-search input {
-  width: 100%;
-  padding: 0.6rem 0.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  transition: border-color 0.2s ease;
-}
-
-.sidebar-search input::placeholder {
-  color: var(--text-secondary);
-}
-
-.sidebar-search input:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.15);
-}
-
-/* Sidebar Nav Links */
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.sidebar-nav-item {
-  display: block;
-  padding: 0.65rem 1rem;
-  border-radius: 0.5rem;
-  color: var(--text-primary);
+.nav-dropdown-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: var(--muted);
   font-size: 0.95rem;
-  transition: background-color 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
 }
 
-.sidebar-nav-item:hover,
-.sidebar-nav-item:focus {
-  background-color: var(--bg-tertiary);
-  color: var(--accent-primary);
+.nav-dropdown-link:hover,
+.nav-dropdown-link.is-active {
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.nav-dropdown-search {
+  margin-left: auto;
+}
+
+.nav-dropdown-search input {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 0.88rem;
+  width: 160px;
+  transition: border-color 0.2s ease, width 0.3s ease;
+}
+
+.nav-dropdown-search input::placeholder {
+  color: var(--muted);
+}
+
+.nav-dropdown-search input:focus {
   outline: none;
+  border-color: var(--accent);
+  width: 200px;
 }
 
-.sidebar-nav-item.is-active {
-  background-color: var(--bg-tertiary);
-  color: var(--accent-primary);
-  font-weight: 600;
-}
-
-/* Sidebar Overlay */
-.sidebar-overlay {
+/* Overlay trasparente per chiudere cliccando fuori */
+.nav-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 18;
   display: none;
-  z-index: 998;
-  backdrop-filter: blur(2px);
 }
 
-.sidebar-overlay.open {
+.nav-overlay.open {
   display: block;
 }
 
-/* ===========================
-   Breadcrumb
-   =========================== */
-.breadcrumb {
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  background-color: var(--bg-secondary);
-  border-radius: 0.5rem;
-}
-
-.breadcrumb ol {
-  display: flex;
-  list-style: none;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-}
-
-.breadcrumb li {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.breadcrumb li:not(:last-child)::after {
-  content: '/';
-  margin-left: 0.5rem;
-  color: var(--text-secondary);
-}
-
-.breadcrumb a { color: var(--accent-primary); }
-.breadcrumb a:hover { color: var(--accent-secondary); }
-.breadcrumb span { color: var(--text-secondary); }
-
-/* ===========================
-   Projects Section
-   =========================== */
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
 .projects-section {
   margin: 2rem 0;
   padding: 2rem;
-  background-color: var(--bg-secondary);
-  border-radius: 1rem;
-  border: 1px solid var(--border-color);
+  background: linear-gradient(180deg, rgba(12, 21, 38, 0.9) 0%, rgba(10, 18, 32, 0.92) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 28px;
+  backdrop-filter: blur(18px);
 }
 
 .projects-section h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 1.5rem;
-  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Project Card */
 .project-card {
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 18px;
+  padding: 1.25rem;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
 .project-card:hover {
-  border-color: var(--accent-primary);
-  box-shadow: 0 4px 16px var(--shadow-color);
+  border-color: rgba(112, 184, 255, 0.3);
+  background: rgba(255, 255, 255, 0.07);
   transform: translateY(-2px);
 }
 
 .project-card h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
-  color: var(--accent-primary);
+  color: var(--accent);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -335,9 +322,9 @@ a:hover { color: var(--accent-secondary); }
 .project-toggle {
   background: none;
   border: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   cursor: pointer;
-  color: var(--accent-primary);
+  color: var(--accent);
   padding: 0;
   transition: transform 0.3s ease;
   flex-shrink: 0;
@@ -347,35 +334,35 @@ a:hover { color: var(--accent-secondary); }
 
 .project-status {
   display: inline-block;
-  font-size: 0.75rem;
-  padding: 0.2rem 0.65rem;
-  border-radius: 1rem;
-  margin-bottom: 0.75rem;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
   font-weight: 600;
 }
 
 .project-status.in-progress {
-  background-color: rgba(74, 158, 255, 0.2);
-  color: var(--accent-primary);
+  background: rgba(112, 184, 255, 0.15);
+  color: var(--accent);
 }
 
 .project-status.completed {
-  background-color: rgba(34, 197, 94, 0.2);
+  background: rgba(34, 197, 94, 0.15);
   color: #22c55e;
 }
 
 .project-progress {
   width: 100%;
-  height: 0.4rem;
-  background-color: var(--bg-primary);
-  border-radius: 0.25rem;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
   overflow: hidden;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .project-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(90deg, var(--accent-strong), var(--accent));
   width: 0;
   transition: width 0.6s ease;
 }
@@ -388,131 +375,117 @@ a:hover { color: var(--accent-secondary); }
 
 .project-card.expanded .project-details {
   max-height: 500px;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.13);
 }
 
 .project-description {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin-bottom: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
 }
 
 .project-tech span {
-  background-color: var(--bg-secondary);
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  color: var(--accent);
+  border: 1px solid rgba(112, 184, 255, 0.15);
 }
 
-/* Archive */
 .projects-archive {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.13);
 }
 
 .projects-archive h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--muted);
 }
 
 .archive-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .archive-list li {
-  padding: 0.65rem 0.75rem;
-  background-color: var(--bg-tertiary);
-  border-radius: 0.5rem;
-  border-left: 3px solid var(--accent-primary);
+  padding: 0.6rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 2px solid var(--accent);
 }
 
 .archive-list a {
-  color: var(--accent-primary);
+  color: var(--accent);
+  font-size: 0.88rem;
   font-weight: 500;
-  font-size: 0.9rem;
 }
 
-/* ===========================
-   Responsive
-   =========================== */
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb {
+  margin: 0.75rem 0;
+  padding: 0.5rem 1rem;
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 12px;
+  font-size: 0.88rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: '/';
+  margin: 0 0.4rem;
+  color: var(--muted);
+}
+
+.breadcrumb a { color: var(--accent); }
+.breadcrumb a:hover { color: var(--accent-strong); }
+.breadcrumb span { color: var(--muted); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 768px) {
-  .sidebar { width: 85%; max-width: 320px; }
+  .nav-dropdown-search { display: none; }
+  .nav-dropdown-inner { gap: 2px; }
+  .nav-dropdown-link { padding: 10px 12px; font-size: 0.9rem; }
   .projects-grid { grid-template-columns: 1fr; }
-  .breadcrumb ol { font-size: 0.88rem; }
 }
 
-@media (max-width: 480px) {
-  .projects-section { padding: 1rem; }
-  .project-card { padding: 1rem; }
-}
-
-/* ===========================
-   Accessibility
-   =========================== */
+/* ============================================================
+   ACCESSIBILITÀ
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
 button:focus, a:focus, input:focus {
-  outline: 2px solid var(--accent-primary);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
-}
-
-/* ===========================
-   Glow Effects
-   =========================== */
-.page-glow {
-  position: fixed;
-  pointer-events: none;
-  opacity: 0.08;
-  z-index: 0;
-}
-
-.page-glow-a {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--accent-primary), transparent);
-  top: -200px;
-  right: -200px;
-  animation: float 20s infinite ease-in-out;
-}
-
-.page-glow-b {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, #6bb6ff, transparent);
-  bottom: -100px;
-  left: -100px;
-  animation: float 15s infinite ease-in-out reverse;
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(40px, 40px); }
-}
-
-body.light-mode .page-glow { opacity: 0.04; }
-
-.site-shell {
-  position: relative;
-  z-index: 1;
 }
