@@ -23,7 +23,6 @@
   </div>
 </header>
 
-<!-- Sidebar laterale sinistra -->
 <nav class="nav-sidebar" id="nav-sidebar" aria-label="Menu di navigazione" aria-hidden="true">
   <div class="sidebar-header">
     <span class="sidebar-title">Menu</span>
@@ -35,13 +34,11 @@
   </div>
 
   <div class="sidebar-section">
-    <p class="sidebar-label">Pagine</p>
+    <p class="sidebar-label">📌 Pagine</p>
     <div class="sidebar-nav" id="sidebar-nav-links">
-      {% for item in nav %}
-        <a href="{{ item.url | relative_url }}" class="sidebar-nav-link {% if page.url == item.url %}is-active{% endif %}">
-          {{ item.label }}
-        </a>
-      {% endfor %}
+      <a href="{{ '/' | relative_url }}"          class="sidebar-nav-link {% if page.url == '/' %}is-active{% endif %}">🏠 Home</a>
+      <a href="{{ '/projects/' | relative_url }}" class="sidebar-nav-link {% if page.url == '/projects/' %}is-active{% endif %}">🚀 Progetti</a>
+      <a href="{{ '/articles/' | relative_url }}" class="sidebar-nav-link {% if page.url == '/articles/' %}is-active{% endif %}">📝 Articoli</a>
     </div>
   </div>
 
