@@ -4,7 +4,6 @@ lang: "it"
 ref: "projects"
 title: "Progetti"
 permalink: "/projects/"
-eyebrow: "Lavori in corso"
 headline: "Cosa sto costruendo adesso"
 lead: "Una panoramica sintetica dei progetti principali su cui sto lavorando e del loro stato attuale."
 hero_links:
