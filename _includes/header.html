@@ -2,6 +2,14 @@
 <header class="site-header-shell" data-header>
   <div class="site-shell site-header-inner">
 
+    <a class="brand" href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
+      <span class="brand-mark">CS</span>
+      <span class="brand-text">
+        <strong>Carlo Scianatico</strong>
+        <small>{% if page.lang == 'en' %}Economics, AI, startup{% else %}Economia, AI, startup{% endif %}</small>
+      </span>
+    </a>
+
     <div class="header-controls">
       <button class="hamburger-menu" id="hamburger-btn" type="button" aria-label="Apri menu" aria-expanded="false">
         <span></span>
@@ -12,18 +20,10 @@
       {% include lang_switch.html %}
     </div>
 
-    <a class="brand" href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
-      <span class="brand-mark">CS</span>
-      <span class="brand-text">
-        <strong>Carlo Scianatico</strong>
-        <small>{% if page.lang == 'en' %}Economics, AI, startup{% else %}Economia, AI, startup{% endif %}</small>
-      </span>
-    </a>
-
   </div>
 </header>
 
-<!-- Sidebar laterale -->
+<!-- Sidebar laterale sinistra -->
 <nav class="nav-sidebar" id="nav-sidebar" aria-label="Menu di navigazione" aria-hidden="true">
   <div class="sidebar-header">
     <span class="sidebar-title">Menu</span>
