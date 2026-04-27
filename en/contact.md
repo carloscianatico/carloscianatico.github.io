@@ -4,7 +4,6 @@ lang: en
 ref: contact
 title: Contact
 permalink: /en/contact/
-eyebrow: Contact
 headline: Direct entry point
 lead: If you want to write to me about ideas, opportunities, projects, or comments
   on the articles, here are the right channels.
