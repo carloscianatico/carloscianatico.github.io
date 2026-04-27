@@ -4,7 +4,6 @@ lang: "it"
 ref: "ideas"
 title: "Idee"
 permalink: "/ideas/"
-eyebrow: "Temi"
 headline: "Le idee che tornano più spesso"
 lead: "Alcuni temi ritornano in quasi tutto quello che scrivo, studio o provo a costruire."
 hero_links:
