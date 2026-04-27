@@ -478,3 +478,16 @@ body.light-mode .bookmark-btn {
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 button:focus, a:focus, input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Chip / label in light mode → blu elettrico */
+body.light-mode .link-card-label,
+body.light-mode .meta-chip,
+body.light-mode .card-kicker,
+body.light-mode .eyebrow,
+body.light-mode .panel-label,
+body.light-mode .post-meta,
+body.light-mode .post-meta-row {
+  color: #0033ff !important;
+  border-color: rgba(0, 51, 255, 0.22) !important;
+  background: rgba(0, 51, 255, 0.07) !important;
+}
