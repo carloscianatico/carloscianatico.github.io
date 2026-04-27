@@ -59,7 +59,7 @@ layout: default
 <section class="section-block reveal">
   <div class="section-heading">
     <h2>
-      <a href="{{ '/articles/' | relative_url }}" class="projects-section-title">
+      <a href="{% if page.lang == 'en' %}{{ '/en/articles/' | relative_url }}{% else %}{{ '/articles/' | relative_url }}{% endif %}" class="projects-section-title">
         {% if page.lang == 'en' %}Articles{% else %}Articoli{% endif %} <span class="projects-arrow">→</span>
       </a>
     </h2>
