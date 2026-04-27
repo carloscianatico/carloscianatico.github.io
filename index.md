@@ -12,7 +12,7 @@ hero_primary_label: "Scopri chi sono"
 hero_primary_url: "/about/"
 hero_secondary_label: "Leggi gli articoli"
 hero_secondary_url: "/articles/"
-hero_photo: /assets/images/profile.jpg
+hero_photo: /assets/images/profile.jpg.jpg
 status_cards:
   - label: Startup
     value: "In sviluppo"
