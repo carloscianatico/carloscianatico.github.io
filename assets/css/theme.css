@@ -599,8 +599,8 @@ body.light-mode .profile-circle-placeholder {
 
 /* ── Brand logo ── */
 .brand-logo {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
   border-radius: 50%;
   display: block;
