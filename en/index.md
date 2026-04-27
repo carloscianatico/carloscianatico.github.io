@@ -4,6 +4,7 @@ lang: en
 ref: home
 title: Home
 permalink: /en/
+hero_photo: /assets/images/profile.jpg.jpg
 hero_kicker: Economics, AI, startup
 hero_title: Carlo Scianatico
 hero_subtitle: Economics and Management student at Bocconi.
@@ -50,3 +51,4 @@ quick_links:
 source_path: index.md
 auto_generated: true
 ---
+
