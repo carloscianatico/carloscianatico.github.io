@@ -17,21 +17,6 @@ layout: default
     </div>
   </div>
 
-  <aside class="hero-panel reveal">
-    <div class="glass-card hero-panel-card">
-      <span class="panel-label">{% if page.lang == 'en' %}Current direction{% else %}Direzione attuale{% endif %}</span>
-      <ul class="status-list">
-        {% for item in page.status_cards %}
-          <li>
-            <span>{{ item.label }}</span>
-            <strong>{{ item.value }}</strong>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </aside>
-</section>
-
 {% if page.focus_cards %}
 <section class="section-block reveal">
   <div class="section-heading">
