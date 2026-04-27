@@ -9,9 +9,9 @@ body.light-mode {
   --line:          rgba(0,0,0,0.10);
   --text:          #0f172a;
   --muted:         #475569;
-  --accent:        #0066ff;
-  --accent-strong: #0044dd;
-  --accent-soft:   rgba(0,102,255,0.12);
+  --accent:        #0033ff;
+  --accent-strong: #0022cc;
+  --accent-soft:   rgba(0,51,255,0.12);
   --success:       #16a34a;
   --shadow:        0 24px 70px rgba(0,0,0,0.10);
 }
@@ -50,7 +50,7 @@ body.light-mode .footer-grid > div {
   border-color: rgba(0,0,0,0.08) !important;
 }
 
-body.light-mode .page-glow-a { background: rgba(0,102,255,0.12) !important; opacity: 0.5; }
+body.light-mode .page-glow-a { background: rgba(0,51,255,0.12) !important; opacity: 0.5; }
 body.light-mode .page-glow-b { background: rgba(22,163,74,0.08) !important; opacity: 0.5; }
 
 body.light-mode .nav-sidebar {
