@@ -1,8 +1,9 @@
 {% assign nav = site.data.navigation[page.lang | default: 'it'] %}
+{% assign is_en = page.lang == 'en' %}
 <header class="site-header-shell" data-header>
   <div class="site-shell site-header-inner">
 
-    <a class="brand" href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
+    <a class="brand" href="{% if is_en %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
       <img class="brand-logo" src="{{ '/assets/images/logo.png' | relative_url }}" alt="Carlo Scianatico logo">
       <span class="brand-text">
         <strong>Carlo Scianatico</strong>
@@ -29,22 +30,28 @@
   </div>
 
   <div class="sidebar-search">
-    <input type="text" id="nav-search-input" placeholder="🔍 Cerca pagina..." aria-label="Cerca pagina">
+    <input type="text" id="nav-search-input" placeholder="🔍 {% if is_en %}Search page...{% else %}Cerca pagina...{% endif %}" aria-label="Cerca">
   </div>
 
   <div class="sidebar-section">
-    <p class="sidebar-label">📌 Pagine</p>
+    <p class="sidebar-label">📌 {% if is_en %}Pages{% else %}Pagine{% endif %}</p>
     <div class="sidebar-nav" id="sidebar-nav-links">
-      <a href="{{ '/' | relative_url }}"          class="sidebar-nav-link {% if page.url == '/' %}is-active{% endif %}">🏠 Home</a>
-      <a href="{{ '/projects/' | relative_url }}" class="sidebar-nav-link {% if page.url == '/projects/' %}is-active{% endif %}">🚀 Progetti</a>
-      <a href="{{ '/articles/' | relative_url }}" class="sidebar-nav-link {% if page.url == '/articles/' %}is-active{% endif %}">📝 Articoli</a>
+      {% if is_en %}
+        <a href="{{ '/en/' | relative_url }}"          class="sidebar-nav-link {% if page.url == '/en/' %}is-active{% endif %}">🏠 Home</a>
+        <a href="{{ '/en/projects/' | relative_url }}" class="sidebar-nav-link {% if page.url == '/en/projects/' %}is-active{% endif %}">🚀 Projects</a>
+        <a href="{{ '/en/articles/' | relative_url }}" class="sidebar-nav-link {% if page.url == '/en/articles/' %}is-active{% endif %}">📝 Articles</a>
+      {% else %}
+        <a href="{{ '/' | relative_url }}"          class="sidebar-nav-link {% if page.url == '/' %}is-active{% endif %}">🏠 Home</a>
+        <a href="{{ '/projects/' | relative_url }}" class="sidebar-nav-link {% if page.url == '/projects/' %}is-active{% endif %}">🚀 Progetti</a>
+        <a href="{{ '/articles/' | relative_url }}" class="sidebar-nav-link {% if page.url == '/articles/' %}is-active{% endif %}">📝 Articoli</a>
+      {% endif %}
     </div>
   </div>
 
   <div class="sidebar-section">
-    <p class="sidebar-label">🔖 Da leggere</p>
+    <p class="sidebar-label">🔖 {% if is_en %}Reading list{% else %}Da leggere{% endif %}</p>
     <div id="sidebar-reading-list" class="sidebar-reading-list">
-      <p class="sidebar-empty">Clicca 🔖 su un articolo per salvarlo qui.</p>
+      <p class="sidebar-empty">{% if is_en %}Click 🔖 on an article to save it here.{% else %}Clicca 🔖 su un articolo per salvarlo qui.{% endif %}</p>
     </div>
   </div>
 </nav>
