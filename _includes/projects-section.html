@@ -8,6 +8,7 @@
     </h2>
   </div>
 
+  <!-- Progetti in corso -->
   <div class="card-grid card-grid-3">
 
     <article class="glass-card info-card">
@@ -44,6 +45,58 @@
     </article>
 
   </div>
+
+  <!-- Progetti completati (espandibile) -->
+  <details class="projects-completed">
+    <summary class="projects-completed-toggle">
+      <span class="projects-completed-label">📦 Progetti completati</span>
+      <span class="projects-completed-arrow">›</span>
+    </summary>
+    <div class="card-grid card-grid-2 projects-completed-grid">
+
+      <article class="glass-card info-card">
+        <span class="card-kicker">✅ Completato &nbsp;·&nbsp; 2025</span>
+        <h3>Analisi Macro Economiche</h3>
+        <p>Studio e visualizzazione di indicatori macroeconomici globali con focus su inflazione e mercati emergenti.</p>
+        <div class="project-chips">
+          <span class="meta-chip">Python</span>
+          <span class="meta-chip">Data Analysis</span>
+        </div>
+      </article>
+
+      <article class="glass-card info-card">
+        <span class="card-kicker">✅ Completato &nbsp;·&nbsp; 2024</span>
+        <h3>AI Chatbot Integration</h3>
+        <p>Integrazione di modelli LLM in flussi di lavoro aziendali per automazione di processi ripetitivi.</p>
+        <div class="project-chips">
+          <span class="meta-chip">OpenAI</span>
+          <span class="meta-chip">Automation</span>
+        </div>
+      </article>
+
+      <article class="glass-card info-card">
+        <span class="card-kicker">✅ Completato &nbsp;·&nbsp; 2024</span>
+        <h3>Business Intelligence Dashboard</h3>
+        <p>Dashboard interattiva per monitoraggio KPI aziendali con aggiornamento dati in tempo reale.</p>
+        <div class="project-chips">
+          <span class="meta-chip">React</span>
+          <span class="meta-chip">PostgreSQL</span>
+        </div>
+      </article>
+
+      <article class="glass-card info-card">
+        <span class="card-kicker">✅ Completato &nbsp;·&nbsp; 2023</span>
+        <h3>Startup Pitch Analytics</h3>
+        <p>Tool per analisi e scoring di pitch deck startup con feedback automatico su struttura e contenuto.</p>
+        <div class="project-chips">
+          <span class="meta-chip">NLP</span>
+          <span class="meta-chip">Python</span>
+        </div>
+      </article>
+
+    </div>
+  </details>
+
 </section>
 
 <style>
@@ -52,20 +105,61 @@
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.projects-section-title:hover {
-  color: var(--accent);
-}
+.projects-section-title:hover { color: var(--accent); }
 .projects-arrow {
   display: inline-block;
   transition: transform 0.2s ease;
 }
-.projects-section-title:hover .projects-arrow {
-  transform: translateX(5px);
-}
+.projects-section-title:hover .projects-arrow { transform: translateX(5px); }
+
 .project-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 14px;
+}
+
+/* Sezione completati */
+.projects-completed {
+  margin-top: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.projects-completed-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  cursor: pointer;
+  list-style: none;
+  background: rgba(255,255,255,0.03);
+  transition: background 0.2s ease;
+  user-select: none;
+}
+.projects-completed-toggle::-webkit-details-marker { display: none; }
+.projects-completed-toggle:hover { background: rgba(255,255,255,0.06); }
+
+.projects-completed-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.projects-completed-arrow {
+  font-size: 1.3rem;
+  color: var(--muted);
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.projects-completed[open] .projects-completed-arrow {
+  transform: rotate(90deg);
+}
+
+.projects-completed-grid {
+  padding: 0 18px 18px;
+  margin-top: 4px;
 }
 </style>
