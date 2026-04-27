@@ -23,16 +23,33 @@
   </div>
 </header>
 
-<div class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
-  <div class="site-shell">
-    <nav class="nav-dropdown-inner">
-      {% for item in nav %}
-        <a href="{{ item.url | relative_url }}" class="nav-dropdown-link {% if page.url == item.url %}is-active{% endif %}">{{ item.label }}</a>
-      {% endfor %}
-      <div class="nav-dropdown-search">
-        <input type="text" id="nav-search-input" placeholder="🔍 Cerca..." aria-label="Cerca pagina">
-      </div>
-    </nav>
+<!-- Sidebar laterale -->
+<nav class="nav-sidebar" id="nav-sidebar" aria-label="Menu di navigazione" aria-hidden="true">
+  <div class="sidebar-header">
+    <span class="sidebar-title">Menu</span>
+    <button class="sidebar-close" id="sidebar-close" type="button" aria-label="Chiudi menu">✕</button>
   </div>
-</div>
-<div class="nav-overlay" id="nav-overlay"></div>
+
+  <div class="sidebar-search">
+    <input type="text" id="nav-search-input" placeholder="🔍 Cerca pagina..." aria-label="Cerca pagina">
+  </div>
+
+  <div class="sidebar-section">
+    <p class="sidebar-label">Pagine</p>
+    <div class="sidebar-nav" id="sidebar-nav-links">
+      {% for item in nav %}
+        <a href="{{ item.url | relative_url }}" class="sidebar-nav-link {% if page.url == item.url %}is-active{% endif %}">
+          {{ item.label }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <p class="sidebar-label">🔖 Da leggere</p>
+    <div id="sidebar-reading-list" class="sidebar-reading-list">
+      <p class="sidebar-empty">Clicca 🔖 su un articolo per salvarlo qui.</p>
+    </div>
+  </div>
+</nav>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
