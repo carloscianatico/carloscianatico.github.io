@@ -596,3 +596,16 @@ body.light-mode .profile-circle-placeholder {
   }
   .profile-initials { font-size: 2rem; }
 }
+
+/* ── Brand logo ── */
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+.brand-mark {
+  display: none;
+}
