@@ -4,7 +4,6 @@ lang: en
 ref: ideas
 title: Ideas
 permalink: /en/ideas/
-eyebrow: Themes
 headline: The ideas that return most often
 lead: Some themes come back in almost everything I write, study, or try to build.
 hero_links:
