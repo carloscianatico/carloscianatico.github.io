@@ -4,7 +4,6 @@ layout: default
 
 <!-- HERO (solo testo + bottoni, senza pannello laterale) -->
 <section class="page-hero reveal">
-  {% if page.hero_kicker %}<span class="eyebrow">{{ page.hero_kicker }}</span>{% endif %}
   <h1>{{ page.hero_title | default: site.title }}</h1>
   {% if page.hero_subtitle %}<p class="hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
   {% if page.hero_intro %}<p class="page-lead">{{ page.hero_intro }}</p>{% endif %}
