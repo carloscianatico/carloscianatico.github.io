@@ -2,19 +2,34 @@
 layout: default
 ---
 
-<!-- HERO (solo testo + bottoni, senza pannello laterale) -->
-<section class="page-hero reveal">
-  <h1>{{ page.hero_title | default: site.title }}</h1>
-  {% if page.hero_subtitle %}<p class="hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
-  {% if page.hero_intro %}<p class="page-lead">{{ page.hero_intro }}</p>{% endif %}
-  <div class="hero-actions">
-    {% if page.hero_primary_label and page.hero_primary_url %}
-      <a class="button button-primary" href="{{ page.hero_primary_url | relative_url }}">{{ page.hero_primary_label }}</a>
-    {% endif %}
-    {% if page.hero_secondary_label and page.hero_secondary_url %}
-      <a class="button button-secondary" href="{{ page.hero_secondary_url | relative_url }}">{{ page.hero_secondary_label }}</a>
-    {% endif %}
+<!-- HERO: testo sinistra + foto cerchio destra -->
+<section class="hero reveal">
+  <div class="hero-copy">
+    <h1>{{ page.hero_title | default: site.title }}</h1>
+    {% if page.hero_subtitle %}<p class="hero-subtitle">{{ page.hero_subtitle }}</p>{% endif %}
+    {% if page.hero_intro %}<p class="hero-intro">{{ page.hero_intro }}</p>{% endif %}
+    <div class="hero-actions">
+      {% if page.hero_primary_label and page.hero_primary_url %}
+        <a class="button button-primary" href="{{ page.hero_primary_url | relative_url }}">{{ page.hero_primary_label }}</a>
+      {% endif %}
+      {% if page.hero_secondary_label and page.hero_secondary_url %}
+        <a class="button button-secondary" href="{{ page.hero_secondary_url | relative_url }}">{{ page.hero_secondary_label }}</a>
+      {% endif %}
+    </div>
   </div>
+
+  <aside class="hero-panel reveal">
+    <div class="profile-circle-wrap">
+      {% if page.hero_photo %}
+        <img class="profile-circle" src="{{ page.hero_photo | relative_url }}" alt="Foto profilo Carlo Scianatico">
+      {% else %}
+        <div class="profile-circle profile-circle-placeholder">
+          <span class="profile-initials">CS</span>
+          <span class="profile-upload-hint">Aggiungi foto</span>
+        </div>
+      {% endif %}
+    </div>
+  </aside>
 </section>
 
 <!-- LINK RAPIDI -->
@@ -32,7 +47,7 @@ layout: default
 </section>
 {% endif %}
 
-<!-- ULTIMO ARTICOLO con titolo linkato -->
+<!-- ULTIMO ARTICOLO -->
 {% if page.lang == 'en' %}
   {% assign latest_posts = site.en_posts | sort: 'date' | reverse %}
 {% else %}
