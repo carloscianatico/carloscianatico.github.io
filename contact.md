@@ -4,7 +4,6 @@ lang: "it"
 ref: "contact"
 title: "Contatti"
 permalink: "/contact/"
-eyebrow: "Contatti"
 headline: "Punto di accesso diretto"
 lead: "Se vuoi scrivermi per confronti, opportunità, progetti o commenti sugli articoli, qui trovi i canali giusti."
 hero_links:
