@@ -2,42 +2,37 @@
 <header class="site-header-shell" data-header>
   <div class="site-shell site-header-inner">
 
-    <div class="header-left">
-      <button class="hamburger-menu" type="button" id="hamburger-btn" aria-label="Apri menu" aria-expanded="false">
+    <a class="brand" href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
+      <span class="brand-mark">CS</span>
+      <span class="brand-text">
+        <strong>Carlo Scianatico</strong>
+        <small>{% if page.lang == 'en' %}Economics, AI, startup{% else %}Economia, AI, startup{% endif %}</small>
+      </span>
+    </a>
+
+    <div class="header-controls">
+      {% include lang_switch.html %}
+      <button class="hamburger-menu" id="hamburger-btn" type="button" aria-label="Apri menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <a class="brand" href="{% if page.lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
-        <span class="brand-mark">CS</span>
-        <span class="brand-text">
-          <strong>Carlo Scianatico</strong>
-          <small>{% if page.lang == 'en' %}Economics, AI, startup{% else %}Economia, AI, startup{% endif %}</small>
-        </span>
-      </a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambia tema">🌙</button>
     </div>
-
-    <nav class="main-nav">
-      {% for item in nav %}
-        <a class="nav-link {% if page.url == item.url %}is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.label }}</a>
-      {% endfor %}
-      {% include lang_switch.html %}
-    </nav>
-
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambia tema">🌙</button>
 
   </div>
 </header>
 
-<div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-<nav class="sidebar" id="sidebar" aria-label="Menu di navigazione">
-  <div class="sidebar-search">
-    <input type="text" id="sidebar-search-input" placeholder="🔍 Cerca pagina..." aria-label="Cerca nelle pagine">
+<div class="nav-dropdown" id="nav-dropdown" aria-hidden="true">
+  <div class="site-shell">
+    <nav class="nav-dropdown-inner">
+      {% for item in nav %}
+        <a href="{{ item.url | relative_url }}" class="nav-dropdown-link {% if page.url == item.url %}is-active{% endif %}">{{ item.label }}</a>
+      {% endfor %}
+      <div class="nav-dropdown-search">
+        <input type="text" id="nav-search-input" placeholder="🔍 Cerca..." aria-label="Cerca pagina">
+      </div>
+    </nav>
   </div>
-  <div class="sidebar-nav">
-    {% for item in nav %}
-      <a href="{{ item.url | relative_url }}" class="sidebar-nav-item {% if page.url == item.url %}is-active{% endif %}">{{ item.label }}</a>
-    {% endfor %}
-  </div>
-</nav>
+</div>
+<div class="nav-overlay" id="nav-overlay"></div>
