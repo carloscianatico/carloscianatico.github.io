@@ -491,3 +491,34 @@ body.light-mode .post-meta-row {
   border-color: rgba(0, 51, 255, 0.22) !important;
   background: rgba(0, 51, 255, 0.07) !important;
 }
+
+/* Spaziatura ridotta tra titoli e testo */
+h1, h2, h3, h4 {
+  margin-bottom: 0.35em;
+}
+.hero h1,
+.page-hero h1,
+.post-hero h1 {
+  margin-bottom: 0.25em;
+}
+.hero-subtitle,
+.hero-intro,
+.page-lead,
+.post-excerpt {
+  margin-top: 0.35em;
+}
+.prose-card h2,
+.prose-card h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.35em;
+}
+.section-heading {
+  margin-bottom: 10px;
+}
+.info-card h3,
+.link-card strong,
+.article-card h2,
+.feature-article h3 {
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
