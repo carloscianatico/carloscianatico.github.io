@@ -4,7 +4,6 @@ lang: en
 ref: about
 title: About
 permalink: /en/about/
-eyebrow: Profile
 headline: Economics, incentives, projects
 lead: I study Economics and Management at Bocconi and focus my work on economic thinking,
   applied AI, and building projects.
