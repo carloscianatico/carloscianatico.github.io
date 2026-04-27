@@ -1,125 +1,71 @@
-<section class="projects-section">
-  <h2>🚀 Cosa sto costruendo</h2>
-  
-  <div class="projects-grid">
-    <!-- Project 1 -->
-    <article class="project-card" data-progress="60">
-      <h3>
-        AI Research Platform
-        <button class="project-toggle" type="button" aria-label="Espandi dettagli progetto">▼</button>
-      </h3>
-      <span class="project-status in-progress">In Progresso</span>
-      
-      <div class="project-progress">
-        <div class="project-progress-bar" style="width: 60%;"></div>
-      </div>
-
-      <div class="project-details">
-        <p class="project-description">
-          Una piattaforma per esplorare e analizzare modelli di intelligenza artificiale. 
-          Fornisce visualizzazioni interattive e analisi comparative di diversi approcci AI.
-        </p>
-        
-        <div class="project-tech">
-          <span>Python</span>
-          <span>TensorFlow</span>
-          <span>React</span>
-          <span>Visualization</span>
-        </div>
-
-        <p class="project-description" style="font-size: 0.85rem; color: var(--text-secondary);">
-          Status: Database schema in progress | Timeline: Q2 2026
-        </p>
-      </div>
-    </article>
-
-    <!-- Project 2 -->
-    <article class="project-card" data-progress="45">
-      <h3>
-        Newsletter Economia Critica
-        <button class="project-toggle" type="button" aria-label="Espandi dettagli progetto">▼</button>
-      </h3>
-      <span class="project-status in-progress">In Progresso</span>
-      
-      <div class="project-progress">
-        <div class="project-progress-bar" style="width: 45%;"></div>
-      </div>
-
-      <div class="project-details">
-        <p class="project-description">
-          Una newsletter settimanale che analizza notizie economiche con un approccio critico.
-          Approfondisce tematiche di economia, finanza e startup con prospettive alternative.
-        </p>
-        
-        <div class="project-tech">
-          <span>Substack</span>
-          <span>Writing</span>
-          <span>Analysis</span>
-          <span>Economics</span>
-        </div>
-
-        <p class="project-description" style="font-size: 0.85rem; color: var(--text-secondary);">
-          Status: Content pipeline setup | Timeline: Lancio Q3 2026
-        </p>
-      </div>
-    </article>
-
-    <!-- Project 3 -->
-    <article class="project-card" data-progress="30">
-      <h3>
-        Startup Ecosystem Map
-        <button class="project-toggle" type="button" aria-label="Espandi dettagli progetto">▼</button>
-      </h3>
-      <span class="project-status in-progress">In Progresso</span>
-      
-      <div class="project-progress">
-        <div class="project-progress-bar" style="width: 30%;"></div>
-      </div>
-
-      <div class="project-details">
-        <p class="project-description">
-          Una mappa interattiva dell'ecosistema startup italiano ed europeo.
-          Mostra investitori, founder, exit e trend di mercato in tempo reale.
-        </p>
-        
-        <div class="project-tech">
-          <span>D3.js</span>
-          <span>Data Visualization</span>
-          <span>Node.js</span>
-          <span>PostgreSQL</span>
-        </div>
-
-        <p class="project-description" style="font-size: 0.85rem; color: var(--text-secondary);">
-          Status: Data collection phase | Timeline: MVP Q4 2026
-        </p>
-      </div>
-    </article>
+<section class="section-block reveal">
+  <div class="section-heading">
+    <span class="eyebrow">{% if page.lang == 'en' %}What I'm building{% else %}Cosa sto costruendo{% endif %}</span>
+    <h2>
+      <a href="{{ '/projects/' | relative_url }}" class="projects-section-title">
+        {% if page.lang == 'en' %}Projects{% else %}Progetti{% endif %} <span class="projects-arrow">→</span>
+      </a>
+    </h2>
   </div>
 
-  <!-- Archive Section -->
-  <div class="projects-archive">
-    <h3>📦 Progetti Completati</h3>
-    <ul class="archive-list">
-      <li>
-        <a href="#" title="Visualizza dettagli progetto">
-          📊 Analisi Macro Economiche (2025)
-        </a>
-      </li>
-      <li>
-        <a href="#" title="Visualizza dettagli progetto">
-          🤖 AI Chatbot Integration (2024)
-        </a>
-      </li>
-      <li>
-        <a href="#" title="Visualizza dettagli progetto">
-          💼 Business Intelligence Dashboard (2024)
-        </a>
-      </li>
-      <li>
-        <a href="#" title="Visualizza dettagli progetto">
-          🎯 Startup Pitch Analytics (2023)
-        </a>
-      </li>
-    </ul>
+  <div class="card-grid card-grid-3">
+
+    <article class="glass-card info-card">
+      <span class="card-kicker">🔬 In sviluppo &nbsp;·&nbsp; 60%</span>
+      <h3>AI Research Platform</h3>
+      <p>Piattaforma per esplorare e comparare modelli AI con visualizzazioni interattive e analisi comparative.</p>
+      <div class="project-chips">
+        <span class="meta-chip">Python</span>
+        <span class="meta-chip">TensorFlow</span>
+        <span class="meta-chip">React</span>
+      </div>
+    </article>
+
+    <article class="glass-card info-card">
+      <span class="card-kicker">✍️ In sviluppo &nbsp;·&nbsp; 45%</span>
+      <h3>Newsletter Economia Critica</h3>
+      <p>Analisi settimanale di notizie economiche con un approccio critico su finanza, startup e mercati.</p>
+      <div class="project-chips">
+        <span class="meta-chip">Substack</span>
+        <span class="meta-chip">Analisi</span>
+        <span class="meta-chip">Economia</span>
+      </div>
+    </article>
+
+    <article class="glass-card info-card">
+      <span class="card-kicker">🗺️ In sviluppo &nbsp;·&nbsp; 30%</span>
+      <h3>Startup Ecosystem Map</h3>
+      <p>Mappa interattiva dell'ecosistema startup italiano ed europeo: investitori, founder, exit e trend.</p>
+      <div class="project-chips">
+        <span class="meta-chip">D3.js</span>
+        <span class="meta-chip">Node.js</span>
+        <span class="meta-chip">PostgreSQL</span>
+      </div>
+    </article>
+
   </div>
 </section>
+
+<style>
+.projects-section-title {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.projects-section-title:hover {
+  color: var(--accent);
+}
+.projects-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.projects-section-title:hover .projects-arrow {
+  transform: translateX(5px);
+}
+.project-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+</style>
