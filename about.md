@@ -4,7 +4,6 @@ lang: "it"
 ref: "about"
 title: "Chi sono"
 permalink: "/about/"
-eyebrow: "Profilo"
 headline: "Economia, incentivi, progetti"
 lead: "Studio Economia e Management in Bocconi e concentro il mio lavoro su pensiero economico, AI applicata e costruzione di progetti."
 hero_links:
