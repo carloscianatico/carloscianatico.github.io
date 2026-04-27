@@ -7,93 +7,109 @@ class ThemeManager {
 
   init() {
     this.applyStoredTheme();
-    this.setupEventListeners();
+    this.setupThemeToggle();
     this.setupHamburgerMenu();
-    this.setupSidebar();
+    this.setupSidebarLinks();
     this.setupProjectCards();
     this.setupSearch();
+  }
+
+  getToggleButton() {
+    return document.getElementById('theme-toggle');
+  }
+
+  setIcon(isLight) {
+    const btn = this.getToggleButton();
+    if (btn) btn.textContent = isLight ? '☀️' : '🌙';
   }
 
   applyStoredTheme() {
     const theme = localStorage.getItem(this.STORAGE_KEY);
     if (theme === 'light') {
       document.body.classList.add(this.LIGHT_MODE_CLASS);
+      this.setIcon(true);
     } else if (theme === 'dark') {
       document.body.classList.remove(this.LIGHT_MODE_CLASS);
+      this.setIcon(false);
     } else {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (prefersLight) {
         document.body.classList.add(this.LIGHT_MODE_CLASS);
+        this.setIcon(true);
+      } else {
+        this.setIcon(false);
       }
     }
   }
 
-  setupEventListeners() {
-    const toggleButton = document.querySelector('.theme-toggle');
-    if (toggleButton) {
-      toggleButton.addEventListener('click', () => this.toggleTheme());
-      toggleButton.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.toggleTheme();
-        }
-      });
-    }
-  }
-
-  toggleTheme() {
-    const isLightMode = document.body.classList.contains(this.LIGHT_MODE_CLASS);
-    if (isLightMode) {
-      document.body.classList.remove(this.LIGHT_MODE_CLASS);
-      localStorage.setItem(this.STORAGE_KEY, 'dark');
-    } else {
-      document.body.classList.add(this.LIGHT_MODE_CLASS);
-      localStorage.setItem(this.STORAGE_KEY, 'light');
-    }
-  }
-
-  setupHamburgerMenu() {
-    const hamburger = document.querySelector('.hamburger-menu');
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-
-    if (!hamburger || !sidebar) return;
-
-    hamburger.addEventListener('click', () => this.toggleSidebar());
-
-    if (overlay) {
-      overlay.addEventListener('click', () => this.closeSidebar());
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        this.closeSidebar();
+  setupThemeToggle() {
+    const btn = this.getToggleButton();
+    if (!btn) return;
+    btn.addEventListener('click', () => this.toggleTheme());
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.toggleTheme();
       }
     });
   }
 
+  toggleTheme() {
+    const isLight = document.body.classList.contains(this.LIGHT_MODE_CLASS);
+    if (isLight) {
+      document.body.classList.remove(this.LIGHT_MODE_CLASS);
+      localStorage.setItem(this.STORAGE_KEY, 'dark');
+      this.setIcon(false);
+    } else {
+      document.body.classList.add(this.LIGHT_MODE_CLASS);
+      localStorage.setItem(this.STORAGE_KEY, 'light');
+      this.setIcon(true);
+    }
+  }
+
+  setupHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    if (!hamburger || !sidebar) return;
+
+    hamburger.addEventListener('click', () => this.toggleSidebar());
+    if (overlay) overlay.addEventListener('click', () => this.closeSidebar());
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this.closeSidebar();
+    });
+  }
+
   toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-    const hamburger = document.querySelector('.hamburger-menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const hamburger = document.getElementById('hamburger-btn');
+    const isOpen = sidebar.classList.contains('open');
 
     sidebar.classList.toggle('open');
     if (overlay) overlay.classList.toggle('open');
-    hamburger.classList.toggle('open');
+    if (hamburger) {
+      hamburger.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+    }
   }
 
   closeSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.sidebar-overlay');
-    const hamburger = document.querySelector('.hamburger-menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const hamburger = document.getElementById('hamburger-btn');
 
     sidebar.classList.remove('open');
     if (overlay) overlay.classList.remove('open');
-    hamburger.classList.remove('open');
+    if (hamburger) {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
   }
 
-  setupSidebar() {
-    const sidebarLinks = document.querySelectorAll('.sidebar nav a');
-    sidebarLinks.forEach(link => {
+  setupSidebarLinks() {
+    document.querySelectorAll('.sidebar-nav-item').forEach(link => {
       link.addEventListener('click', () => this.closeSidebar());
     });
   }
@@ -118,12 +134,10 @@ class ThemeManager {
         card.classList.toggle('expanded');
         toggle.classList.toggle('open');
 
-        const progress = card.querySelector('.project-progress-bar');
-        if (progress && card.classList.contains('expanded')) {
-          const percent = card.dataset.progress || '50';
-          setTimeout(() => {
-            progress.style.width = percent + '%';
-          }, 100);
+        const bar = card.querySelector('.project-progress-bar');
+        if (bar && card.classList.contains('expanded')) {
+          const pct = card.dataset.progress || '50';
+          setTimeout(() => { bar.style.width = pct + '%'; }, 100);
         }
 
         openCard = card.classList.contains('expanded') ? card : null;
@@ -132,21 +146,16 @@ class ThemeManager {
   }
 
   setupSearch() {
-    const searchInput = document.querySelector('.sidebar-search input');
-    if (!searchInput) return;
+    const input = document.getElementById('sidebar-search-input');
+    if (!input) return;
 
-    searchInput.addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase();
-      const navItems = document.querySelectorAll('.sidebar nav a');
-
-      navItems.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        item.style.display = text.includes(query) ? 'block' : 'none';
+    input.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.sidebar-nav-item').forEach(link => {
+        link.style.display = link.textContent.toLowerCase().includes(q) ? 'block' : 'none';
       });
     });
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  new ThemeManager();
-});
+document.addEventListener('DOMContentLoaded', () => { new ThemeManager(); });
