@@ -12,12 +12,12 @@ hero_links:
   - label: Contattami
     url: "/contact/"
 cards:
-  - kicker: Formazione
-    title: "Bocconi"
-    text: "Sto costruendo la mia base in economia e management, con attenzione agli incentivi, alla strategia e alle decisioni."
-  - kicker: Metodo
-    title: "AI usata bene"
-    text: "Non come slogan, ma come strumento per organizzare lavoro, testare idee e aumentare la qualità dell'esecuzione."
+#  - kicker: Formazione
+#    title: "Bocconi"
+#    text: "Sto costruendo la mia base in economia e management, con attenzione agli incentivi, alla strategia e alle decisioni."
+#  - kicker: Metodo
+#    title: "AI usata bene"
+#    text: "Non come slogan, ma come strumento per organizzare lavoro, testare idee e aumentare la qualità dell'esecuzione."
 #  - kicker: Direzione
 #    title: "Progetti e scrittura"
 #    text: "Mi interessa costruire cose vere e spiegare solo idee abbastanza solide da meritare spazio pubblico."
