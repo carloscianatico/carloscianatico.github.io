@@ -18,9 +18,9 @@ cards:
   - kicker: Metodo
     title: "AI usata bene"
     text: "Non come slogan, ma come strumento per organizzare lavoro, testare idee e aumentare la qualità dell'esecuzione."
-  - kicker: Direzione
-    title: "Progetti e scrittura"
-    text: "Mi interessa costruire cose vere e spiegare solo idee abbastanza solide da meritare spazio pubblico."
+#  - kicker: Direzione
+#    title: "Progetti e scrittura"
+#    text: "Mi interessa costruire cose vere e spiegare solo idee abbastanza solide da meritare spazio pubblico."
 ---
 Sono Carlo Scianatico.
 
