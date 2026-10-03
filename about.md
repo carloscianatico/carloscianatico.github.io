@@ -28,7 +28,7 @@ Questo sito non nasce per sembrare più grande di quello che faccio. Nasce per i
 
 Le aree che mi interessano di più sono tre.
 
-## Pensiero economico
+## Pensiero critico - economico
 
 Mi interessa capire come funzionano gli incentivi, come si distribuisce il potere decisionale e perché alcuni sistemi producono valore mentre altri sprecano risorse ed energia.
 
