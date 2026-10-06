@@ -40,8 +40,4 @@ quick_links:
     title: "Temi ricorrenti"
     text: "Economia, incentivi, AI applicata e pensiero critico."
     url: "/ideas/"
-  - label: Contatti
-    title: "Punto di accesso diretto"
-    text: "Per confronti, opportunità e conversazioni serie."
-    url: "/contact/"
 ---

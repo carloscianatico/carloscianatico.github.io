@@ -44,10 +44,6 @@ quick_links:
   title: Recurring themes
   text: Economics, incentives, applied AI, and critical thinking.
   url: /en/ideas/
-- label: Contact
-  title: Direct entry point
-  text: For conversations, opportunities, and serious exchanges.
-  url: /en/contact/
 source_path: index.md
 auto_generated: true
 ---
