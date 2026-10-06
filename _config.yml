@@ -8,6 +8,11 @@ permalink: pretty
 
 timezone: Europe/Rome
 
+# Contatore visite GoatCounter: dopo aver creato l'account su goatcounter.com,
+# togli il commento e scrivi il codice scelto (es. se l'indirizzo è
+# carlo.goatcounter.com, scrivi: goatcounter: "carlo")
+# goatcounter: "IL-TUO-CODICE"
+
 collections:
   en_posts:
     output: true

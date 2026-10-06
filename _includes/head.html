@@ -9,4 +9,8 @@
 <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
 <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
 <script defer src="{{ '/assets/app.js' | relative_url }}"></script>
+{% comment %} Contatore visite (GoatCounter): si attiva solo se in _config.yml c'è "goatcounter" e solo in produzione. {% endcomment %}
+{% if site.goatcounter and jekyll.environment == 'production' %}
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{% endif %}
 
