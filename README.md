@@ -3,10 +3,12 @@
 ## Come funziona questa struttura
 
 - **Scrivi e aggiorni in italiano**: pagine `.md` nella root e post in `_posts/`.
-- La versione inglese già presente nel repo vive in `en/` e `_en_posts/`.
+- **Build in public**: gli aggiornamenti sui progetti sono file in `_updates/` (es. `_updates/nome-aggiornamento.md`, con `title`, `date`, `excerpt` nel front matter). Compaiono nella pagina Progetti e l'ultimo anche in home. La versione inglese vive in `_en_updates/` (stesso nome file, con `source_slug` uguale al nome del file senza `.md`).
+- La versione inglese già presente nel repo vive in `en/`, `_en_posts/` e `_en_updates/`.
 - Se vuoi un inglese migliore per una pagina o un post, puoi creare un override manuale in:
   - `_manual_en/pages/<nome-file>.md`
   - `_manual_en/posts/<nome-file>.md`
+  - `_manual_en/updates/<nome-file>.md`
 
 ## Per avere la traduzione automatica ad ogni modifica
 

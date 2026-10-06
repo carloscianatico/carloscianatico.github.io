@@ -12,6 +12,16 @@
   {% if counterpart %}
     {% assign switch_url = counterpart.url %}
   {% endif %}
+{% elsif page.collection == 'updates' %}
+  {% assign counterpart = site.en_updates | where: 'source_slug', page.slug | first %}
+  {% if counterpart %}
+    {% assign switch_url = counterpart.url %}
+  {% endif %}
+{% elsif page.collection == 'en_updates' %}
+  {% assign counterpart = site.updates | where: 'slug', page.source_slug | first %}
+  {% if counterpart %}
+    {% assign switch_url = counterpart.url %}
+  {% endif %}
 {% else %}
   {% if current_lang == 'it' %}
     {% assign target_lang = 'en' %}

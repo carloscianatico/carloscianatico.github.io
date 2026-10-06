@@ -77,34 +77,33 @@ layout: default
 </section>
 {% endif %}
 
-<!-- ULTIMA NEWS PROGETTI (dati in _data/project_news.yml) -->
-{% assign latest_news = site.data.project_news | sort: 'date' | reverse | first %}
-{% if latest_news %}
-  {% if page.lang == 'en' %}
-    {% assign news_text = latest_news.en %}
-    {% assign projects_url = '/en/projects/' %}
-  {% else %}
-    {% assign news_text = latest_news.it %}
-    {% assign projects_url = '/projects/' %}
-  {% endif %}
-  {% assign news_url = latest_news.url | default: projects_url %}
+<!-- ULTIMO AGGIORNAMENTO BUILD IN PUBLIC (collezione updates / en_updates) -->
+{% if page.lang == 'en' %}
+  {% assign latest_updates = site.en_updates | sort: 'date' | reverse %}
+  {% assign projects_url = '/en/projects/' %}
+{% else %}
+  {% assign latest_updates = site.updates | sort: 'date' | reverse %}
+  {% assign projects_url = '/projects/' %}
+{% endif %}
+{% assign latest_update = latest_updates | first %}
 
+{% if latest_update %}
 <section class="section-block reveal">
   <div class="section-heading">
     <h2>
       <a href="{{ projects_url | relative_url }}" class="projects-section-title">
-        {% if page.lang == 'en' %}Project news{% else %}News progetti{% endif %} <span class="projects-arrow">→</span>
+        Build in public <span class="projects-arrow">→</span>
       </a>
     </h2>
   </div>
   <article class="glass-card feature-article">
     <div>
-      <span class="post-meta">{{ latest_news.date | date: "%d %b %Y" }}</span>
-      <h3><a href="{{ news_url | relative_url }}">{{ news_text.title }}</a></h3>
-      {% if news_text.text %}<p>{{ news_text.text }}</p>{% endif %}
+      <span class="post-meta">{{ latest_update.date | date: "%d %b %Y" }}</span>
+      <h3><a href="{{ latest_update.url | relative_url }}">{{ latest_update.title }}</a></h3>
+      {% if latest_update.excerpt %}<p>{{ latest_update.excerpt | strip_html }}</p>{% endif %}
     </div>
-    <a class="button button-secondary" href="{{ news_url | relative_url }}">
-      {% if page.lang == 'en' %}See projects{% else %}Vai ai progetti{% endif %}
+    <a class="button button-secondary" href="{{ latest_update.url | relative_url }}">
+      {% if page.lang == 'en' %}Read{% else %}Leggi{% endif %}
     </a>
   </article>
 </section>

@@ -42,6 +42,17 @@ layout: null
     </url>
     {% endfor %}
 
+    <!-- Aggiornamenti build in public IT/EN -->
+    {% assign all_updates = site.updates | concat: site.en_updates %}
+    {% for update in all_updates %}
+    <url>
+          <loc>{{ update.url | prepend: site.url }}</loc>
+          <lastmod>{{ update.date | date_to_xmlschema }}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    {% endfor %}
+
     <!-- Pagine Statiche -->
     <url>
           <loc>{{ site.url }}/about.html</loc>

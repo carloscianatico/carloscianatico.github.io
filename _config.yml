@@ -17,6 +17,13 @@ collections:
   en_posts:
     output: true
     permalink: /en/articles/:slug/
+  # Build in public: aggiornamenti sui progetti (stessa logica degli articoli)
+  updates:
+    output: true
+    permalink: /projects/aggiornamenti/:name/
+  en_updates:
+    output: true
+    permalink: /en/projects/updates/:name/
 
 defaults:
   - scope:
@@ -28,6 +35,18 @@ defaults:
   - scope:
       path: ""
       type: en_posts
+    values:
+      layout: post
+      lang: en
+  - scope:
+      path: ""
+      type: updates
+    values:
+      layout: post
+      lang: it
+  - scope:
+      path: ""
+      type: en_updates
     values:
       layout: post
       lang: en

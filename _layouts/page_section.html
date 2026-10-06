@@ -29,6 +29,33 @@ layout: default
 </section>
 {% endif %}
 
+{% if page.show_updates %}
+  {% if page.lang == 'en' %}
+    {% assign updates_list = site.en_updates | sort: 'date' | reverse %}
+  {% else %}
+    {% assign updates_list = site.updates | sort: 'date' | reverse %}
+  {% endif %}
+  {% if updates_list.size > 0 %}
+<section class="section-block reveal">
+  <div class="section-heading">
+    <h2>Build in public</h2>
+  </div>
+  <div class="articles-list">
+    {% for update in updates_list %}
+      <article class="glass-card article-card">
+        <div>
+          <span class="post-meta">{{ update.date | date: "%d %b %Y" }}</span>
+          <h3><a href="{{ update.url | relative_url }}">{{ update.title }}</a></h3>
+          {% if update.excerpt %}<p>{{ update.excerpt | strip_html }}</p>{% endif %}
+        </div>
+        <a class="button button-secondary" href="{{ update.url | relative_url }}">{% if page.lang == 'en' %}Open{% else %}Apri{% endif %}</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+  {% endif %}
+{% endif %}
+
 <section class="content-shell reveal">
   <article class="prose-card glass-card">
     {{ content }}

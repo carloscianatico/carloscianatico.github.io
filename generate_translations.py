@@ -221,12 +221,35 @@ def process_post(path: Path, translator: Translator) -> None:
     target.write_text(dump_markdown(new_fm, translated_body), encoding='utf-8')
 
 
+def process_update(path: Path, translator: Translator) -> None:
+    """Aggiornamenti build in public: _updates/*.md -> _en_updates/*.md"""
+    manual = ROOT / '_manual_en' / 'updates' / path.name
+    target_dir = ROOT / '_en_updates'
+    target_dir.mkdir(exist_ok=True)
+    target = target_dir / path.name
+    if manual.exists():
+        target.write_text(manual.read_text(encoding='utf-8'), encoding='utf-8')
+        return
+
+    fm, body = load_markdown(path)
+    new_fm = translate_data(fm, translator)
+    new_fm['lang'] = 'en'
+    new_fm['source_slug'] = path.stem
+    new_fm['auto_generated'] = True
+    translated_body = translate_markdown_body(body, translator)
+    if translator.mode != 'argos' and target.exists():
+        return
+    target.write_text(dump_markdown(new_fm, translated_body), encoding='utf-8')
+
+
 def main() -> None:
     translator = Translator()
     for name in PAGES:
         process_page(ROOT / name, translator)
     for post in sorted((ROOT / '_posts').glob('*.md')):
         process_post(post, translator)
+    for update in sorted((ROOT / '_updates').glob('*.md')):
+        process_update(update, translator)
     mode_file = ROOT / '.manual_build'
     mode_file.write_text(f'translation_mode={translator.mode}\n', encoding='utf-8')
 

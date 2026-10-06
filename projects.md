@@ -5,7 +5,8 @@ ref: "projects"
 title: "Progetti"
 permalink: "/projects/"
 headline: "Cosa sto costruendo adesso"
-lead: "Una panoramica sintetica dei progetti principali su cui sto lavorando e del loro stato attuale."
+lead: "Una panoramica sintetica dei progetti principali su cui sto lavorando e del loro stato attuale, più gli aggiornamenti su come li sto costruendo, in pubblico."
+show_updates: true
 hero_links:
   - label: Leggi gli articoli
     url: "/articles/"

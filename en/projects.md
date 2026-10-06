@@ -5,7 +5,9 @@ ref: projects
 title: Projects
 permalink: /en/projects/
 headline: What I am building right now
-lead: A concise overview of the main projects I am working on and their current state.
+lead: A concise overview of the main projects I am working on and their current state,
+  plus updates on how I am building them, in public.
+show_updates: true
 hero_links:
 - label: Read the articles
   url: /en/articles/
