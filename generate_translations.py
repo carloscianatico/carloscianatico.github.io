@@ -21,6 +21,7 @@ FRONT_MATTER_RE = re.compile(r'^---\s*\n(.*?)\n---\s*\n?(.*)$', re.DOTALL)
 INLINE_LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 IMAGE_RE = re.compile(r'!\[([^\]]*)\]\(([^)]+)\)')
 URL_RE = re.compile(r'^(https?://|mailto:|#)')
+BOLD_RE = re.compile(r'\*\*(.+?)\*\*')
 
 
 class Translator:
@@ -96,6 +97,31 @@ def translate_string(text: str, translator: Translator) -> str:
     return translator.translate(text)
 
 
+def _translate_keep_space(text: str, translator: Translator) -> str:
+    """Traduce conservando gli spazi iniziali/finali (il traduttore li toglie)."""
+    if not text.strip():
+        return text
+    lead = text[: len(text) - len(text.lstrip())]
+    trail = text[len(text.rstrip()):]
+    return lead + translator.translate(text.strip()) + trail
+
+
+def _translate_with_bold(text: str, translator: Translator) -> str:
+    """Traduce separatamente testo normale e testo in **grassetto**.
+
+    Tradurre la riga intera rovina i ** finali (es. "frase? * *"), quindi i
+    segmenti in grassetto vengono tradotti a parte e poi riavvolti nei **.
+    """
+    parts = BOLD_RE.split(text)
+    out: list[str] = []
+    for i, part in enumerate(parts):
+        if i % 2 == 1:
+            out.append('**' + translator.translate(part.strip()).strip() + '**')
+        else:
+            out.append(_translate_keep_space(part, translator))
+    return ''.join(out)
+
+
 def translate_inline_markdown(line: str, translator: Translator) -> str:
     placeholders: list[str] = []
 
@@ -105,7 +131,7 @@ def translate_inline_markdown(line: str, translator: Translator) -> str:
 
     masked = IMAGE_RE.sub(_store, line)
     masked = INLINE_LINK_RE.sub(lambda m: f"[{translator.translate(m.group(1))}]({localize_url(m.group(2)) if m.group(2).startswith('/') else m.group(2)})", masked)
-    translated = translator.translate(masked)
+    translated = _translate_with_bold(masked, translator)
     for idx, original in enumerate(placeholders):
         translated = translated.replace(f"@@PLACEHOLDER{idx}@@", original)
     return translated

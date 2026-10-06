@@ -1,0 +1,69 @@
+# Build e pubblicazione del sito con traduzione automatica IT -> EN.
+# Ad ogni push su main: traduce pagine, articoli e aggiornamenti in inglese,
+# costruisce il sito con Jekyll e lo pubblica su GitHub Pages.
+# Richiede: Settings > Pages > Build and deployment > Source = "GitHub Actions".
+name: Build e deploy del sito
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python (per la traduzione)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Installa dipendenze di traduzione
+        run: pip install -r requirements.txt
+
+      - name: Genera le versioni inglesi
+        run: python scripts/generate_translations.py
+
+      - name: Ruby (per Jekyll)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Installa Jekyll
+        run: bundle install
+
+      - name: Configura Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Costruisci il sito
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Carica il sito
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Pubblica su GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
